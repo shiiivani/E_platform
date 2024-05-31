@@ -1,0 +1,1810 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/course_material.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Righteous&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .profile-btn:hover {
+            border-radius: 5px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-container.inactive {
+            display: none;
+        }
+
+
+        .left-section .menu-categories {
+            background-color: #BDADAD;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            padding: 35px;
+            width: 350px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        .menu-categories.inactive {
+            display: none;
+        }
+
+        .left-section .menu-categories img {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .menu-categories .first-image {
+            top: -15px;
+            left: -15px;
+        }
+
+        .menu-categories .second-image {
+            top: -15px;
+            right: -65px;
+        }
+
+        .menu-categories .fourth-image {
+            bottom: 0;
+            left: -65px;
+        }
+
+        .menu-categories .third-image {
+            bottom: 40px;
+            right: -30px;
+        }
+
+        .menu-categories .menu-container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            position: relative;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-container ul {
+            padding-left: 0 !important;
+        }
+
+        .menu-container ul li {
+            list-style: none;
+            margin-bottom: 20px;
+            border-bottom: 1.5px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-container li:hover {
+            border-bottom: 1.5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <i id="toggleMenu" class="fa fa-bars" aria-hidden="true" style="cursor: pointer"></i>
+            <div class="menu-categories inactive">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="first-image" width="180px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="second-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="third-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="fourth-image" width="200px"
+                    alt="Stack of Books">
+                <div class="menu-container">
+                    <ul>
+                        <a href="{% url 'my_course' %}">
+                            <li>My Courses</li>
+                        </a>
+                        <a href="{% url 'certificate' %}">
+                            <li>Certificates</li>
+                        </a>
+                        <a href="{% url 'ticket' %}">
+                            <li>Support & Help</li>
+                        </a>
+                        <a href="{% url 'referral' %}">
+                            <li>Referral Program</li>
+                        </a>
+                        <a href="{% url 'payment_history' %}">
+                            <li>Payment History</li>
+                        </a>
+                        <a href="{% url 'blog' %}">
+                            <li>Blog</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+            <a href="{% url 'landing_page_after_login' %}">
+                <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
+
+            </a>
+            <div class="searchBar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="search" name="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="right-section">
+            <p class="learnings">My Learnings</p>
+            <ul class="learnings-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <p class="categories">Categories</p>
+            <ul class="main-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <ul class="web-development-category category">
+                <li>HTML / CSS</li>
+                <li>Javascript</li>
+                <li>Bootstrap</li>
+                <li>React Js</li>
+                <li>Angular</li>
+                <li>Node Js</li>
+                <li>Express Js</li>
+            </ul>
+            <ul class="mobile-developement-category category">
+                <li>Android Development with Java/ Kotlin
+                </li>
+                <li>iOS Development with Swift</li>
+                <li> React Native </li>
+            </ul>
+            <ul class="programming-category category">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Ruby</li>
+                <li>PHP</li>
+                <li>Go</li>
+            </ul>
+            <ul class="engineering-category category">
+                <li>Software Development Lifecycle (SDLC)</li>
+                <li>Agile and Scrum</li>
+                <li> DevOps Principles</li>
+                <li>Software Testing and Quality Assurance</li>
+            </ul>
+            <ul class="block-chain-category category">
+                <li>Blockchain Fundamentals</li>
+                <li> Smart Contract Development</li>
+                <li>Cryptocurrency and Bitcoin Basic</li>
+            </ul>
+            <ul class="iot-category category">
+                <li>Introduction to loT
+                </li>
+                <li>IoT Platforms and Technologies
+                </li>
+                <li> IoT Security and Privacy</li>
+            </ul>
+            <ul class="cloud-category category">
+                <li> Introduction to Cloud Computing
+                </li>
+                <li>Amazon Web Services (AWS)
+                </li>
+                <li>Microsoft Azure</li>
+                <li>Google Cloud Platform (GCP)</li>
+                <li>DevOps Practices and Tools</li>
+            </ul>
+            <ul class="data-science-category category">
+                <li>Python for Data Science
+                </li>
+                <li>Data Analysis with Pandas
+                </li>
+                <li>NumPy and SciPy</li>
+                <li>Machine Learning Fundamentals</li>
+                <li>Deep Learning with TensorFlow or PyTorch</li>
+                <li>Natural Language Processing</li>
+            </ul>
+            <ul class="cybersecurity-category category">
+                <li> Introduction to Cybersecurity
+                </li>
+                <li>Ethical Hacking
+                </li>
+                <li>Network Security</li>
+                <li>Web Application Security</li>
+                <li> Cryptography</li>
+                <li> Incident Response and Forensics</li>
+            </ul>
+            <a href="{% url 'profile_page' %}">
+                <img class="logo" src="{% static 'assets/user.png' %}" alt="">
+
+            </a>
+            <p style="color: #fff; font-size: 0.9rem; margin-right: 10px">Student's Name</p>
+            <img id="toggleProfile" src="{% static 'assets/roadmap/down-arrow.png' %}" width="25px" alt=""
+                style="cursor: pointer">
+            <div class="profile-container inactive">
+                <a href="{% url 'profile_page' %}"><button class="profile-btn">Profile Setting Page</button></a>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; justify-content: flex-start; width: 100%;">
+        <div class="sidebar">
+            <h4>Academy</h4>
+            <ul class="main-list">
+                <li class="li main-item active" data-target="module-container">
+                    <p>Course Material</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <ul class="week-list">
+                    <li class="li week-item active">Week 1</li>
+                    <li class="li week-item ">Week 2</li>
+                    <li class="li week-item ">Week 3</li>
+                    <li class="li week-item ">Week 4</li>
+                    <li class="li week-item ">Week 5</li>
+                </ul>
+                <li class="li main-item " data-target="grade-container">
+                    <p>Grade</p><span><img src="{% static 'assets/up-arrow.png' %}" style="transform: rotate(180deg)"
+                            alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="notes-container">
+                    <p>Notes</p><span><img src="{% static 'assets/up-arrow.png' %}" style="transform: rotate(180deg)"
+                            alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="discussion-container">
+                    <p>Discussion Forum</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="message-container">
+                    <p>Messages</p><span><img src="{% static 'assets/up-arrow.png' %}" style="transform: rotate(180deg)"
+                            alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="resource-container">
+                    <p>Resources</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="course-info-container">
+                    <p>Course Info</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="career-guidance-container">
+                    <p>Career Guidance</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="papers-container">
+                    <p>Previous Q/P & Ans</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+                <li class="li main-item " data-target="mentorship-container">
+                    <p>1 on 1 Mentorship</p><span><img src="{% static 'assets/up-arrow.png' %}"
+                            style="transform: rotate(180deg)" alt="" width="20px"></span>
+                </li>
+
+            </ul>
+        </div>
+        <div class="module-container containers active">
+            <div class="borderline">
+                <div class="border-header flex">
+                    <img src="{% static 'assets/course/down-arrow.png' %}" alt="" width="20px"
+                        style="margin-bottom: 8px;">
+                    <h4> Analysing Industry Structure</h4>
+                </div>
+                <div class="course-progress flex">
+                    <div class="video-left flex" style="margin-right: 20px;margin-top: 10px">
+                        <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                        <p>3hr 3min of video left</p>
+                    </div>
+                    <div class="reading flex" style="margin-right: 20px;margin-top: 10px">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                        <p>10 min of readings left</p>
+                    </div>
+                    <div class="grade flex" style="margin-right: 20px;margin-top: 10px">
+                        <img src="{% static 'assets/course/globe.png' %}" width="15px" alt="Link icon"
+                            style="margin-right: 10px">
+                        <p>1 Graded assesment left</p>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <p style="font-size: 0.9rem; font-weight: 400;">Hello and welcome back to this module. Here, we will
+                    guide
+                    you to an advanced
+                    level of expertise in this domain. Our goal is to provide you with an in-depth understanding and
+                    explore
+                    the intricacies of the subject matter. Let's continue our journey towards mastery.</p>
+                <div class="flex" style="margin-top: 20px;">
+                    <p style="font-weight: 500">Course Introduction</p>
+                    <img src="{% static 'assets/course/down-arrow.png' %}" alt="" width="20px"
+                        style="margin-left: 5px; margin-top: 3px">
+
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_overview' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_overview' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_overview' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_overview' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="line"></div>
+                <div class="flex" style="margin-top: 20px;">
+                    <p style="font-weight: 500">Lessons</p>
+                    <img src="{% static 'assets/course/down-arrow.png' %}" alt="" width="20px"
+                        style="margin-left: 5px; margin-top: 3px">
+
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <a href="{% url 'course_video' %}">
+                        <div class="video-info" style="margin-left: 10px">
+                            <p style="font-weight: 400;"> Name of the video</p>
+                            <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="line"></div>
+                <div class="flex" style="margin-top: 20px;">
+                    <p style="font-weight: 500">Tools</p>
+                    <img src="{% static 'assets/course/down-arrow.png' %}" alt="" width="20px"
+                        style="margin-left: 5px; margin-top: 3px">
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <div class="video-info" style="margin-left: 10px">
+                        <p style="font-weight: 400;"> Name of the video</p>
+                        <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="flex" style="margin-top: 20px;">
+                    <p style="font-weight: 500">Quiz</p>
+                    <img src="{% static 'assets/course/down-arrow.png' %}" alt="" width="20px"
+                        style="margin-left: 5px; margin-top: 3px">
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-lock" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                    <div class="video-info" style="margin-left: 13px">
+                        <p style="font-weight: 400;"> Name of the quiz</p>
+                        <p style="font-weight: 300; font-size: 0.9rem">Questions. 3min</p>
+                    </div>
+                </div>
+                <div class="flex" style="margin-top: 20px;">
+                    <i class="fa fa-file-text-o" aria-hidden="true" style="font-size: 2.2rem;"></i>
+                    <div class="video-info" style="margin-left: 10px">
+                        <p style="font-weight: 400;"> Name of the assessment</p>
+                        <p style="font-weight: 300; font-size: 0.9rem">Reading. 10min</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grade-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <div class="borderline">
+                <h5>Grades</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="big-row">Items</th>
+                            <th class="small-row">Status</th>
+                            <th class="small-row">Due</th>
+                            <th class="small-row">Weight</th>
+                            <th class="small-row">Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p style="font-size: 0.9rem">Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row">80.5%</td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row">83.55%</td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row"></td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row"></td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row"></td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="flex small-row">
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p>
+                            </td>
+                            <td class="date">
+                                <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row"></td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p style="font-weight: 400;"> Name of the video</p>
+                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                </div>
+                            </td>
+                            <td class="small-row"></td>
+                            <td class="date"></td>
+                            <td class="small-row">40%</td>
+                            <td class="small-row"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="below-containers">
+                    <div class="assignment">
+                        <div class="flex">
+                            <i class="fa fa-lock" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p>Submit Your Assessment</p>
+                        </div>
+                        <div class="flex" style="width:20%">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p style="font-size: 0.9rem">Locked</p>
+                        </div>
+                        <div class="date">
+                            <p style="font-size: 0.9rem">May 2</p>
+                            <p style="font-size: 0.9rem">12:00PM IST</p>
+                        </div>
+                    </div>
+                    <div class="assignment">
+                        <div class="flex">
+                            <i class="fa fa-file-text" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p>Review 3 peers assignments</p>
+                        </div>
+                        <div class="flex" style="width:20%">
+                            <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p style="font-size: 0.9rem">Locked</p>
+                        </div>
+                        <div class="date">
+                            <p style="font-size: 0.9rem">May 2</p>
+                            <p style="font-size: 0.9rem">12:00PM IST</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="notes-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <div class="border">
+                <h4>Notes</h4>
+                <img src="{% static 'assets/notes/notes.png' %}" width="50px" alt="Notes icon">
+                <p style="opacity: 0.5; margin-top: 5px;">Notes can be article/pdf/images/links etc</p>
+            </div>
+        </div>
+        <div class="discussion-container containers">
+            <div class="borderline">
+                <h4>Discussion</h4>
+                <table class="discussion-table">
+                    <thead>
+                        <tr>
+                            <th class="col-1">Week</th>
+                            <th class="col-2">Topic</th>
+                            <th class="col-3">Replies</th>
+                            <th class="col-4">Views</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="week-row week2">
+                            <td class="col-1">Week 1</td>
+                            <td class="col-2 ">
+                                <h5>Discussion Title</h5>
+                                <p>Discussion time</p>
+                            </td>
+                            <td class="col-3">0</td>
+                            <td class="col-4">0</td>
+                        </tr>
+                        <tr class="week-row week2">
+                            <td class="col-1">Week 2</td>
+                            <td class="col-2 ">
+                                <h5>Discussion Title</h5>
+                                <p>Discussion time</p>
+                            </td>
+                            <td class="col-3">0</td>
+                            <td class="col-4">0</td>
+                        </tr>
+                        <tr class="week-row week3">
+                            <td class="col-1">Week 3</td>
+                            <td class="col-2 ">
+                                <h5>Discussion Title</h5>
+                                <p>Discussion time</p>
+                            </td>
+                            <td class="col-3">0</td>
+                            <td class="col-4">0</td>
+                        </tr>
+                        <tr class="week-row week4">
+                            <td class="col-1">Week 4</td>
+                            <td class="col-2 ">
+                                <h5>Discussion Title</h5>
+                                <p>Discussion time</p>
+                            </td>
+                            <td class="col-3">0</td>
+                            <td class="col-4">0</td>
+                        </tr>
+                        <tr class="week-row week5">
+                            <td class="col-1">Week 5</td>
+                            <td class="col-2 ">
+                                <h5>Discussion Title</h5>
+                                <p>Discussion time</p>
+                            </td>
+                            <td class="col-3">0</td>
+                            <td class="col-4">0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="week-basis-discussion-container containers">
+            <div class="flex">
+                <h6 class="week-heading discussion-weeks"><span><i class="fa fa-angle-right" aria-hidden="true"
+                            style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                    1</h6>
+                <h6 class="week-heading" style="margin-left: 10px"><span><i class="fa fa-angle-right" aria-hidden="true"
+                            style="font-size: 1.5rem; margin-right: 6px;"></i></span>Discussion forum</h6>
+            </div>
+            <p style="margin-top: 30px;font-size: 1.1rem">Discussion Forum</p>
+            <h6 class="discussion-weeks" style="margin-top: 50px; font-weight: 700">Week 1</h6>
+            <p style="font-size: 0.9rem">You can discuss this week modules here</p>
+            <div class="flex" style="margin-top: 20px; justify-content: space-between;">
+                <div class="search-container">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                <div class="btn-container createPostBtn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <button>Create Post</button>
+                </div>
+            </div>
+            <div class="filter-container">
+                <div style="position: relative;margin-right: 40px">
+                    <div class="sort-container flex">
+                        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+                        <p>Sort</p>
+                    </div>
+                    <div class="sort-pop-up">
+                        <h5>Sort</h5>
+                        <ul>
+                            <li>Recent</li>
+                            <li>Top</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="position:relative">
+                    <div class="filter flex">
+                        <i class="fa fa-filter" aria-hidden="true"></i>
+                        <p>Filter</p>
+                    </div>
+                    <div class="filter-pop-up">
+                        <h5>Level</h5>
+                        <ul>
+                            <li>All</li>
+                            <li>Answered</li>
+                            <li>Unanswered</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>TOPIC</th>
+                        <th>REPLIES</th>
+                        <th>VIEWS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td class="post-title">
+                            <h6>Post title here</h6>
+                            <div class="flex">
+                                <p>Course Name</p>
+                                <p class="tag">Mentor</p>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="post-basis-discussion-container containers">
+            <div class="flex">
+                <h6 class="week-heading discussion-weeks"><span><i class="fa fa-angle-right" aria-hidden="true"
+                            style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                    1</h6>
+                <h6 class="week-heading" style="margin-left: 10px"><span><i class="fa fa-angle-right" aria-hidden="true"
+                            style="font-size: 1.5rem; margin-right: 6px;"></i></span>Discussion forum</h6>
+            </div>
+            <p style="margin-top: 30px;font-size: 1.1rem">Discussion Forum</p>
+            <h6 class="discussion-weeks" style="margin-top: 50px; font-weight: 700">Week 1</h6>
+            <p style="font-size: 0.9rem">You can discuss this week modules here</p>
+            <div class="flex" style="margin-top: 20px; justify-content: space-between;">
+                <div class="search-container">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="text" placeholder="Search here">
+                </div>
+                <div class="btn-container createPostBtn">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <button>Create Post</button>
+                </div>
+            </div>
+            <div class="line"></div>
+            <h5 style="font-weight: 700; margin-bottom: 20px">Post Title</h5>
+            <div class="flex" style="align-items: flex-start;">
+                <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size: 2.2rem; margin-right:  10px"></i>
+                <div class="post-container">
+                    <div class="flex">
+                        <h6 style="font-weight: 600;font-size: 1.1rem; color: #000">Name</h6>
+                        <p class="tag">Mentor</p>
+                    </div>
+                    <p>Content over here what ever the customer write What language can I include in my prompts
+                        (submitted via browser not API) that would reduce the probability or even eliminate the
+                        possibility of hallucinations in the response?
+                        What would be the potential downsides for various use cases such as a creative writing task?What
+                        language can I include in my prompts (submitted via browser not API) that would reduce the
+                        probability or even eliminate the possibility of hallucinations in the response?</p>
+                </div>
+            </div>
+            <div class="line" style="margin-bottom: 15px;"></div>
+            <div class="flex" style="justify-content: space-between;">
+                <div class="flex first-btn-container">
+                    <div class="flex buttons">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <i class="fa fa-thumbs-up" aria-hidden="true" style="display: none;"></i>
+                        <p>Like</p>
+                    </div>
+                    <div class="flex buttons">
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                        <p>Share</p>
+                    </div>
+                </div>
+                <div class="flex second-btn-container">
+                    <div class="more-container">
+                        <div class="flex">
+                            <p>More</p>
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </div>
+                        <div class="more-pop-up">
+                            <ul>
+                                <li class="close">More<span><i class="fa fa-ellipsis-h" aria-hidden="true"></i></span>
+                                </li>
+                                <li>Report this post</li>
+                                <li class="link-to-post">Link to post</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="{% url 'reply_to_post' %}">
+                        <div class="post-btn-container">
+                            <i class="fa fa-reply" aria-hidden="true"></i>
+                            <button>Reply</button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="comments-container">
+                <h5 style="margin-bottom: 15px">Replies</h5>
+                <div class="comments flex" style="align-items: flex-start;">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"
+                        style="font-size: 2.2rem; margin-right:  10px"></i>
+                    <div class="content">
+                        <div class="flex">
+                            <p style="font-size: 1.1rem;font-weight: 600;">Name</p>
+                            <p class="tag">Learner</p>
+                        </div>
+                        <p style="margin: 10px 0">Comment of the person...</p>
+                        <div class="flex">
+                            <div class="flex buttons">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="display: none;"></i>
+                                <p>Like</p>
+                            </div>
+                            <div class="flex buttons">
+                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                <p>Reply</p>
+                            </div>
+                            <div class="more-container">
+                                <div class="flex">
+                                    <p>More</p>
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </div>
+                                <div class="more-pop-up">
+                                    <ul>
+                                        <li class="close">More<span><i class="fa fa-ellipsis-h"
+                                                    aria-hidden="true"></i></span></li>
+                                        <li>Report this post</li>
+                                        <li class="link-to-post">Link to post</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments flex" style="align-items: flex-start;">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"
+                        style="font-size: 2.2rem; margin-right:  10px"></i>
+                    <div class="content">
+                        <div class="flex">
+                            <p style="font-size: 1.1rem;font-weight: 600;">Name</p>
+                            <p class="tag">Learner</p>
+                        </div>
+                        <p style="margin: 10px 0">Comment of the person...</p>
+                        <div class="flex">
+                            <div class="flex buttons">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="display: none;"></i>
+                                <p>Like</p>
+                            </div>
+                            <div class="flex buttons">
+                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                <p>Reply</p>
+                            </div>
+                            <div class="more-container">
+                                <div class="flex">
+                                    <p>More</p>
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </div>
+                                <div class="more-pop-up">
+                                    <ul>
+                                        <li class="close">More<span><i class="fa fa-ellipsis-h"
+                                                    aria-hidden="true"></i></span></li>
+                                        <li>Report this post</li>
+                                        <li class="link-to-post">Link to post</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments flex" style="align-items: flex-start;">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"
+                        style="font-size: 2.2rem; margin-right:  10px"></i>
+                    <div class="content">
+                        <div class="flex">
+                            <p style="font-size: 1.1rem;font-weight: 600;">Name</p>
+                            <p class="tag">Learner</p>
+                        </div>
+                        <p style="margin: 10px 0">Comment of the person...</p>
+                        <div class="flex">
+                            <div class="flex buttons">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="display: none;"></i>
+                                <p>Like</p>
+                            </div>
+                            <div class="flex buttons">
+                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                <p>Reply</p>
+                            </div>
+                            <div class="more-container">
+                                <div class="flex">
+                                    <p>More</p>
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </div>
+                                <div class="more-pop-up">
+                                    <ul>
+                                        <li class="close">More<span><i class="fa fa-ellipsis-h"
+                                                    aria-hidden="true"></i></span></li>
+                                        <li>Report this post</li>
+                                        <li class="link-to-post">Link to post</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="comments flex" style="align-items: flex-start;">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"
+                        style="font-size: 2.2rem; margin-right:  10px"></i>
+                    <div class="content">
+                        <div class="flex">
+                            <p style="font-size: 1.1rem;font-weight: 600;">Name</p>
+                            <p class="tag">Learner</p>
+                        </div>
+                        <p style="margin: 10px 0">Comment of the person...</p>
+                        <div class="flex">
+                            <div class="flex buttons">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                                <i class="fa fa-thumbs-up" aria-hidden="true" style="display: none;"></i>
+                                <p>Like</p>
+                            </div>
+                            <div class="flex buttons">
+                                <i class="fa fa-reply" aria-hidden="true"></i>
+                                <p>Reply</p>
+                            </div>
+                            <div class="more-container">
+                                <div class="flex">
+                                    <p>More</p>
+                                    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                                </div>
+                                <div class="more-pop-up">
+                                    <ul>
+                                        <li class="close">More<span><i class="fa fa-ellipsis-h"
+                                                    aria-hidden="true"></i></span></li>
+                                        <li>Report this post</li>
+                                        <li class="link-to-post">Link to post</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <div class="borderline">
+                <h4>Messages</h4>
+                <p style="margin: 15px;">Message by admin....</p>
+            </div>
+        </div>
+        <div class="resource-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <h4>Resources</h4>
+            <div class="borderline ">
+                <p style="margin: 15px;">You may wish to download your resources from here, to flourish your
+                    work</p>
+                <h6>Week 1</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+                <h6>Week 2</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+                <h6>Week 3</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+                <h6>Week 4</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+                <h6>Week 5</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+                <h6>Week 6</h6>
+                <div class="pdf-container">
+                    <p>PDF here</p>
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                    <ul class="download-pop-up">
+                        <li>Download Question Paper</li>
+                        <li>Download Answer Paper</li>
+                        <li>Download both</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="course-info-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <h4>Course-info</h4>
+            <div class="borderline">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="col-1">Basic Info</td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Level</td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Commitment</td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">Language</td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">How to pass</td>
+                            <td class="col-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-1">User Ratings</td>
+                            <td class="col-2"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 style="font-size: 1.2rem;font-weight: 600">Syllabus</h5>
+                <h6 style="font-size: 1rem;font-weight: 600; padding: 15px; background: #6D627C61;
+                ">Week 1</h6>
+                <div class="course-details">
+                    <h6 style="font-size: 0.95rem; margin-bottom: 3px;font-weight: 600">Course Name</h6>
+                    <p style="font-size: 0.95rem">Description about the course</p>
+                    <div class="small-details">
+                        <div class="flex">
+                            <i class="fa fa-play-circle-o" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p>11 videos</p>
+                        </div>
+                        <div class="flex">
+                            <i class="fa fa-file-text-o" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <p>Duration here</p>
+                        </div>
+                        <div class="flex">
+                            <img src="{% static 'assets/globe.png' %}" alt="Globe Icon" width="20px"
+                                style="margin-right: 10px;">
+                            <p>No. of tests</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="border-break"></div>
+                <h5 style="font-size: 1.2rem;font-weight: 600;">How it works?</h5>
+                <div class="border" style="text-align: left; display: block; margin-bottom: 15px;">
+                    <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 20px;">General</p>
+                    <h6 style="margin-bottom: 10px; font-weight: 600; font-size: 1.1rem">How do I pass?</h6>
+                    <p style="font-size: 0.95rem;">Answer starts from here</p>
+                </div>
+                <div class="border" style="text-align: left; display: block;margin-bottom: 15px;">
+                    <p style="font-size: 1.2rem; font-weight: 300; margin-bottom: 20px;">Pre-graded
+                    </p>
+                    <h6 style="margin-bottom: 10px; font-weight: 600; font-size: 1.1rem">How do I pass?</h6>
+                    <p style="font-size: 0.95rem;">Answer starts from here</p>
+                </div>
+                <h5 style="font-size: 1.2rem;font-weight: 600; margin-top: 25px;">Related Courses?</h5>
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}"
+                            class="card-img-top" alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name
+                                of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+
+                    </div>
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}"
+                            class="card-img-top" alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name
+                                of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="career-guidance-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <div class="borderline">
+                <h4 style="margin-bottom: 15px">Career Guidance</h4>
+                <p>Every student is unique. They have their own learning style, pace, study
+                    patterns, skills they are natural at, lessons they find difficult, and areas they find
+                    interesting.
+                    These qualities later become the determinants that will help them find their ideal career.
+                    However,
+                    most students are themselves not aware of their uniqueness; then how can they make as
+                    important a
+                    decision as a career? That’s why the first step of a career guidance process involves
+                    psychometrics
+                    to identify the Aptitude, Interest and Personality of a student.</p>
+                <p>Every student is unique. They have their own learning style, pace, study patterns, skills
+                    they are
+                    natural at, lessons they find difficult, and areas they find interesting. These qualities
+                    later
+                    become the determinants that will help them find their ideal career. However, most students
+                    are
+                    themselves not aware of their uniqueness; then how can they make as important a decision as
+                    a
+                    career? That’s why the first step of a career guidance process involves psychometrics
+                    to identify
+                    the Aptitude, Interest and Personality of a student.</p>
+
+            </div>
+        </div>
+        <div class="papers-container containers">
+            <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
+                        style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
+                1</h6>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Question Paper PDF</th>
+                            <th>Answer Paper PDF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CBSE Class 10 Math</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>Previous year question paper for cbse class 10 mathematics standard</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 Science</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 Social Science</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 English</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 Hindi A</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 Hindi B</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                        <tr>
+                            <td>CBSE Class 10 Subject</td>
+                            <td>Download</td>
+                            <td>Download</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="mentorship-container containers">
+            <div class="flex" style="width: 100%;justify-content: center;">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="topic">Topic</label>
+                        <input type="text" id="topic" name="topic" placeholder="Enter topic here">
+                    </div>
+                    <div class="flex">
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" name="date" placeholder="03/05/2024">
+                        </div>
+                        <div class="form-group">
+                            <label for="mobileNumber">Mobile Number</label>
+                            <input type="number" id="mobileNumber" name="mobileNumber"
+                                placeholder="Enter your mobile number">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="text" id="email" name="email" placeholder="Enter your email address">
+                    </div>
+                    <div class="buttons-container">
+                        <button class="ticket-btn">Raise Ticket</button>
+                        <button class="pay-btn">Proceed to pay</button>
+                    </div>
+                </form>
+
+                <div class="image-container">
+                    <img src="{% static 'assets/course-material/mentorship.png' %}" alt="" width="300px">
+                </div>
+            </div>
+            <p class="note">Note: Once you book your slot, Our team will contact you either through call or mail
+                in
+                couple of days ,the any topic you select or content you choose will be delievered for you with
+                high
+                quality content and with highly qualified mentors</p>
+            <h4 style="margin-bottom: 15px; font-weight: 600;">History</h4>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sl.No</th>
+                            <th>Payment Date</th>
+                            <th>Topic</th>
+                            <th>Booking Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>00/00/0000</td>
+                            <td>Topic Name</td>
+                            <td>00/00/0000</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>00/00/0000</td>
+                            <td>Topic Name</td>
+                            <td>00/00/0000</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>00/00/0000</td>
+                            <td>Topic Name</td>
+                            <td>00/00/0000</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>00/00/0000</td>
+                            <td>Topic Name</td>
+                            <td>00/00/0000</td>
+                            <td>Completed</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-container">
+        <div class="link-modal">
+            <div class="flex">
+                <h6>Link to Post</h6>
+                <i class="fa fa-times close" aria-hidden="true"></i>
+            </div>
+            <p>link of the post will be here....</p>
+            <p><span><i class="fa fa-link" aria-hidden="true"></i></span>Copy link</p>
+        </div>
+        <div class="create-post-container">
+            <div class="flex" style="justify-content: space-between;">
+                <h4 style="font-weight:600; margin-bottom: 20px">Create Your Post</h4>
+                <i class="fa fa-long-arrow-left close" aria-hidden="true"></i>
+            </div>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter your title">
+            </div>
+            <div class="form-group">
+                <label for="reply">Reply</label>
+                <textarea name="reply" rows="4" cols="50" placeholder="Enter you reply here"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="forum">Forum</label>
+                <select id="week" name="week">
+                    <option value="week1">Week 1</option>
+                    <option value="week2">Week 2</option>
+                    <option value="week3">Week 3</option>
+                    <option value="week4">Week 4</option>
+                    <option value="week5">Week 5</option>
+                </select>
+            </div>
+            <div class="create-post-btn">
+                <button class="close">Cancel</button>
+                <button>Post</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.categories');
+            const categoryList = document.querySelector('.main-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.learnings');
+            const categoryList = document.querySelector('.learnings-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainCategories = document.querySelectorAll('.main-category li');
+            const categoryLists = document.querySelectorAll('.category');
+
+            mainCategories.forEach(function (mainCategory, index) {
+                mainCategory.addEventListener('click', function () {
+                    // Hide all category lists
+                    const categoryList = categoryLists[index];
+                    categoryList.style.display = (categoryList.style.display === 'none') ? 'block' : 'none';
+
+                    // Hide all other category lists
+                    categoryLists.forEach(function (category, idx) {
+                        if (idx !== index) {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.getElementById('toggleProfile').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.profile-container');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.getElementById('toggleMenu').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.menu-categories');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            function handleActiveState(listSelector, itemClass) {
+                const listItems = document.querySelectorAll(listSelector);
+
+                listItems.forEach(item => {
+                    item.addEventListener('click', function () {
+                        // Remove active class from all items within the same class
+                        const sameClassItems = document.querySelectorAll(itemClass);
+                        sameClassItems.forEach(li => li.classList.remove('active'));
+
+                        // Add active class to the clicked item
+                        this.classList.add('active');
+                    });
+                });
+            }
+
+            // Apply the active state handler to both main-list and week-list independently
+            handleActiveState('.main-list > .main-item', '.main-item');
+            // handleActiveState('.week-list > .week-item', '.week-item');
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const weekItems = document.querySelectorAll('.week-list .week-item');
+            const weekHeaders = document.querySelectorAll('h6.weeks');
+
+            weekItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all week items
+                    weekItems.forEach(week => week.classList.remove('active'));
+
+                    // Add active class to the clicked item
+                    this.classList.add('active');
+
+                    // Get the selected week text
+                    const selectedWeek = this.textContent;
+
+                    // Update all h6 elements with the class 'weeks'
+                    weekHeaders.forEach(header => {
+                        header.innerHTML = `<span><i class="fa fa-angle-right" aria-hidden="true" style="font-size: 1.5rem; margin-right: 6px;"></i></span>${selectedWeek}`;
+                    });
+                });
+            });
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const pdfContainers = document.querySelectorAll('.pdf-container');
+
+            pdfContainers.forEach(container => {
+                const icon = container.querySelector('.fa-ellipsis-h');
+                const ul = container.querySelector('.download-pop-up');
+
+                icon.addEventListener('click', function () {
+                    ul.classList.toggle('active');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const listItems = document.querySelectorAll('.main-list .main-item');
+
+            listItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove 'active' class from all containers
+                    document.querySelectorAll('.containers').forEach(container => {
+                        container.classList.remove('active');
+                    });
+
+                    // Get the target container class from data-target attribute
+                    const targetClass = this.getAttribute('data-target');
+
+                    // Add 'active' class to the target container
+                    document.querySelector('.' + targetClass).classList.add('active');
+                });
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const sortContainer = document.querySelector('.sort-container');
+            const sortPopUp = document.querySelector('.sort-pop-up');
+            const filterContainer = document.querySelector('.filter');
+            const filterPopUp = document.querySelector('.filter-pop-up');
+
+            sortContainer.addEventListener('click', function () {
+                sortPopUp.classList.toggle('active');
+                filterPopUp.classList.remove('active');
+            });
+
+            filterContainer.addEventListener('click', function () {
+                filterPopUp.classList.toggle('active');
+                sortPopUp.classList.remove('active');
+            });
+
+            document.addEventListener('click', function (event) {
+                if (!sortContainer.contains(event.target) && !sortPopUp.contains(event.target)) {
+                    sortPopUp.classList.remove('active');
+                }
+                if (!filterContainer.contains(event.target) && !filterPopUp.contains(event.target)) {
+                    filterPopUp.classList.remove('active');
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const moreContainers = document.querySelectorAll('.more-container');
+
+            moreContainers.forEach(container => {
+                const flexDiv = container.querySelector('.flex');
+                const morePopUp = container.querySelector('.more-pop-up');
+
+                flexDiv.addEventListener('click', function () {
+                    morePopUp.classList.toggle('active');
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the elements
+            const linkToPostBtns = document.querySelectorAll('.link-to-post');
+            const createPostBtns = document.querySelectorAll('.createPostBtn');
+            const linkModal = document.querySelector('.link-modal');
+            const createPostModal = document.querySelector('.create-post-container');
+            const modalContainer = document.querySelector('.modal-container')
+            const closeBtns = document.querySelectorAll('.close');
+
+            // Event listener to open the link to post modal
+            linkToPostBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    linkModal.classList.add('active');
+                    modalContainer.classList.add('active')
+                });
+            });
+
+            createPostBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    createPostModal.classList.add('active');
+                    modalContainer.classList.add('active')
+                });
+            });
+
+            // Event listeners to close the link modal
+            document.querySelectorAll('.close').forEach(element => {
+                element.addEventListener('click', function () {
+                    linkModal.classList.remove('active');
+                    modalContainer.classList.remove('active')
+                });
+            });
+
+            // Event listeners to close the create post modal
+            document.querySelectorAll('.close').forEach(element => {
+                element.addEventListener('click', function () {
+                    createPostModal.classList.remove('active');
+                    modalContainer.classList.remove('active')
+                });
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const flexDivs = document.querySelectorAll('.flex');
+
+            flexDivs.forEach(flexDiv => {
+                const thumbOutline = flexDiv.querySelector('.fa-thumbs-o-up');
+                const thumbSolid = flexDiv.querySelector('.fa-thumbs-up');
+
+                flexDiv.addEventListener('click', function () {
+                    if (thumbOutline.style.display === 'none') {
+                        thumbOutline.style.display = 'inline';
+                        thumbSolid.style.display = 'none';
+                    } else {
+                        thumbOutline.style.display = 'none';
+                        thumbSolid.style.display = 'inline';
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all post title elements
+            const postTitles = document.querySelectorAll('.post-title');
+            const postBasisContainer = document.querySelector('.post-basis-discussion-container');
+            const weekBasisContainer = document.querySelector('.week-basis-discussion-container');
+
+            // Add click event listener to each post title
+            postTitles.forEach(title => {
+                title.addEventListener('click', function () {
+                    // Toggle the active class on post-basis-container
+                    postBasisContainer.classList.add('active');
+                    weekBasisContainer.classList.remove('active');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all post title elements
+            const weekRow = document.querySelectorAll('.week-row');
+            const discussionContainer = document.querySelector('.discussion-container');
+            const weekBasisContainer = document.querySelector('.week-basis-discussion-container');
+
+            // Add click event listener to each post title
+            weekRow.forEach(row => {
+                row.addEventListener('click', function () {
+                    // Toggle the active class on post-basis-container
+                    weekBasisContainer.classList.add('active');
+                    discussionContainer.classList.remove('active');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const weekItems = document.querySelectorAll('.discussion-table .col-1');
+            const weekHeaders = document.querySelectorAll('.discussion-weeks');
+
+            weekItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Remove active class from all week items
+                    weekItems.forEach(week => week.classList.remove('active'));
+
+                    // Add active class to the clicked item
+                    this.classList.add('active');
+
+                    // Get the selected week text
+                    const selectedWeek = this.textContent;
+
+                    // Update all h6 elements with the class 'weeks'
+                    weekHeaders.forEach(header => {
+                        header.innerHTML = `<span><i class="fa fa-angle-right" aria-hidden="true" style="font-size: 1.5rem; margin-right: 6px;"></i></span>${selectedWeek}`;
+                    });
+                });
+            });
+        });
+
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

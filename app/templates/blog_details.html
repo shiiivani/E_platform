@@ -1,0 +1,645 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/blog_details.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Righteous&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <i id="toggleMenu" class="fa fa-bars" aria-hidden="true" style="cursor: pointer"></i>
+            <div class="menu-categories inactive">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="first-image" width="180px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="second-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="third-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="fourth-image" width="200px"
+                    alt="Stack of Books">
+                <div class="menu-container">
+                    <ul>
+                        <a href="{% url 'my_course' %}">
+                            <li>My Courses</li>
+                        </a>
+                        <a href="{% url 'certificate' %}">
+                            <li>Certificates</li>
+                        </a>
+                        <a href="{% url 'ticket' %}">
+                            <li>Support & Help</li>
+                        </a>
+                        <a href="{% url 'referral' %}">
+                            <li>Referral Program</li>
+                        </a>
+                        <a href="{% url 'payment_history' %}">
+                            <li>Payment History</li>
+                        </a>
+                        <a href="{% url 'blog' %}">
+                            <li>Blog</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+            <a href="{% url 'landing_page_after_login' %}">
+                <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
+
+            </a>
+            <div class="searchBar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="search" name="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="right-section">
+            <p class="learnings">My Learnings</p>
+            <ul class="learnings-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <p class="categories">Categories</p>
+            <ul class="main-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <ul class="web-development-category category">
+                <li>HTML / CSS</li>
+                <li>Javascript</li>
+                <li>Bootstrap</li>
+                <li>React Js</li>
+                <li>Angular</li>
+                <li>Node Js</li>
+                <li>Express Js</li>
+            </ul>
+            <ul class="mobile-developement-category category">
+                <li>Android Development with Java/ Kotlin
+                </li>
+                <li>iOS Development with Swift</li>
+                <li> React Native </li>
+            </ul>
+            <ul class="programming-category category">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Ruby</li>
+                <li>PHP</li>
+                <li>Go</li>
+            </ul>
+            <ul class="engineering-category category">
+                <li>Software Development Lifecycle (SDLC)</li>
+                <li>Agile and Scrum</li>
+                <li> DevOps Principles</li>
+                <li>Software Testing and Quality Assurance</li>
+            </ul>
+            <ul class="block-chain-category category">
+                <li>Blockchain Fundamentals</li>
+                <li> Smart Contract Development</li>
+                <li>Cryptocurrency and Bitcoin Basic</li>
+            </ul>
+            <ul class="iot-category category">
+                <li>Introduction to loT
+                </li>
+                <li>IoT Platforms and Technologies
+                </li>
+                <li> IoT Security and Privacy</li>
+            </ul>
+            <ul class="cloud-category category">
+                <li> Introduction to Cloud Computing
+                </li>
+                <li>Amazon Web Services (AWS)
+                </li>
+                <li>Microsoft Azure</li>
+                <li>Google Cloud Platform (GCP)</li>
+                <li>DevOps Practices and Tools</li>
+            </ul>
+            <ul class="data-science-category category">
+                <li>Python for Data Science
+                </li>
+                <li>Data Analysis with Pandas
+                </li>
+                <li>NumPy and SciPy</li>
+                <li>Machine Learning Fundamentals</li>
+                <li>Deep Learning with TensorFlow or PyTorch</li>
+                <li>Natural Language Processing</li>
+            </ul>
+            <ul class="cybersecurity-category category">
+                <li> Introduction to Cybersecurity
+                </li>
+                <li>Ethical Hacking
+                </li>
+                <li>Network Security</li>
+                <li>Web Application Security</li>
+                <li> Cryptography</li>
+                <li> Incident Response and Forensics</li>
+            </ul>
+            <a href="{% url 'profile_page' %}">
+                <img class="logo" src="{% static 'assets/user.png' %}" alt="">
+
+            </a>
+            <p style="color: #fff; font-size: 0.9rem; margin-right: 10px">Student's Name</p>
+            <img id="toggleProfile" src="{% static 'assets/roadmap/down-arrow.png' %}" width="25px" alt=""
+                style="cursor: pointer">
+            <div class="profile-container inactive">
+                <a href="{% url 'profile_page' %}"><button class="profile-btn">Profile Setting Page</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="blog-details-container">
+        <div class="header-container">
+            <img src="{% static 'assets/blog/section.png' %}" alt="" width="100%">
+            <div class="heading">
+                <h1 style="font-size: 1.7rem">Blog details</h1>
+                <div class="flex">
+                    <p>Home</p>
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    <p>Blog</p>
+                </div>
+            </div>
+        </div>
+        <div class="blog-content flex">
+            <div class="left-section">
+                <div class="flex header-container">
+                    <h4 style="font-size: 1.4rem">Trending Blogs</h4>
+                    <div class="flex">
+                        <button style="background-color: #FF7675;">Edit</button>
+                        <button style="background-color: #000;">Delete</button>
+                    </div>
+                </div>
+                <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="" width="100%">
+                <div class="flex small-details">
+                    <div class="flex">
+                        <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                        <p>20 July, 2024</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <p>by Admin</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <p>5 Min Read</p>
+                    </div>
+                    <div class="flex">
+                        <i class="fa fa-comment-o" aria-hidden="true"></i>
+                        <p>5 Comments</p>
+                    </div>
+                </div>
+                <h3 style="font-weight: 600; margin: 30px 0;">How To Become idiculously Self-Aware In 20 Minutes</h3>
+                <p class="para">Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                    bibendum. Ut ac
+                    nisi porta, malesuada risus nonrra
+                    dolo areay Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae in
+                    tristique libero, quis ultrices diamraesent
+                    varius diam dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Maximus ligula
+                    eleifend.</p>
+                <p class="para">Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                    bibendum. Ut ac
+                    nisi porta, malesuada risus nonrra
+                    dolo areay Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae in
+                    tristique libero, quis ultrices diamraesent
+                    varius diam dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Maximus ligula
+                    eleifend.</p>
+                <div class="quote-container">
+                    <p>“ urabitur varius eros rutrum consequat Mauris areathe sollicitudin
+                        enim condimentum luctus enim justo non molestie nisl ”</p>
+                    <i class="fa fa-quote-right" aria-hidden="true"></i>
+                </div>
+                <p class="para">Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                    bibendum. Ut ac nisi porta, malesuada risus nonrra
+                    dolo areay Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.
+                </p>
+                <h3 style="font-weight: 600; margin: 30px 0;">What Will I Learn From This Course?</h3>
+                <p class="para">Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                    bibendum. Ut ac nisi porta, malesuada risus non
+                    viverra dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.</p>
+                <ul class="lists">
+                    <li><span><img src="{% static 'assets/blog/list-icon.png' %}" alt="" width="25px"></span>Work with
+                        color & Gradients &
+                        Grids
+                    </li>
+                    <li><span><img src="{% static 'assets/blog/list-icon.png' %}" alt="" width="25px"></span>All the
+                        useful shortcuts</li>
+                    <li><span><img src="{% static 'assets/blog/list-icon.png' %}" alt="" width="25px"></span>Be able to
+                        create Flyers,
+                        Brochures, Advertisements</li>
+                    <li><span><img src="{% static 'assets/blog/list-icon.png' %}" alt="" width="25px"></span>How to work
+                        with Images & Text
+                    </li>
+                </ul>
+                <p class="para" style="margin-bottom: 40px">Maximus ligula eleifend id nisl quis interdum. Sed malesuada
+                    tortor non turpis semper
+                    bibendum. Ut ac nisi porta, malesuada risus nonrra
+                    dolo areay Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae in
+                    tristique libero, quis ultrices diamraesent
+                    varius diam dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra.Maximus ligula
+                    eleifend id nisl quis interdum. Sed
+                    malesuada tortor non turpis semper bibendum. Ut ac nisi porta, malesuada risus nonVestibulum ante
+                    ipsum primis</p>
+                <hr />
+                <div class="flex tags">
+                    <div class="left-section flex">
+                        <h6>Tags:</h6>
+                        <p class="tag">Bath Cleaning</p>
+                        <p class="tag">Cleaning</p>
+                    </div>
+                    <div class="right-section flex">
+                        <h6>Share:</h6>
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <hr />
+                <div class="author-container flex">
+                    <img src="{% static 'assets/blog/author-img.png' %}" alt="" width="100px">
+                    <div class="author-msg">
+                        <p style="color: #1C1A4A">Author</p>
+                        <h5 style="font-size: 1.2rem; font-weight: 500;margin-bottom: 10px !important">Brooklyn Simmons
+                        </h5>
+                        <p style="color: #6D6C80">Finanappreciate your trust greatly Our clients choose dentace ducts a
+                            curae in tristique
+                            liberois ultrices
+                            diamraesent varius diam dui. Class aptent taciti sociosqu ad litora torquent per.</p>
+                    </div>
+                </div>
+                <h5>02 Comments</h5>
+                <div class="comments-container flex">
+                    <img src="{% static 'assets/blog/user1.png' %}" alt="" width="90px">
+                    <div class="comment">
+                        <div class="flex header">
+                            <h6 style="font-weight: 600;
+                            font-size: 1.1rem">Jessica Rose</h6>
+                            <p class="date">20 July, 2024</p>
+                        </div>
+
+                        <p>Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                            bibendum.
+                            Ut ac nisi porta,
+                            malesuada risus nonVestibulum ante ipsum primisMaximus ligula eleifend id nisl quis
+                            interdum.
+                        </p>
+                        <button>Reply</button>
+                    </div>
+                </div>
+                <hr />
+                <div class="comments-container flex">
+                    <img src="{% static 'assets/blog/user2.png' %}" alt="" width="90px">
+                    <div class="comment">
+                        <div class="flex header">
+                            <h6 style="font-weight: 600;
+                            font-size: 1.1rem">Parker Willy</h6>
+                            <p class="date">20 July, 2024</p>
+                        </div>
+
+                        <p>Maximus ligula eleifend id nisl quis interdum. Sed malesuada tortor non turpis semper
+                            bibendum.
+                            Ut ac nisi porta,
+                            malesuada risus nonVestibulum ante ipsum primisMaximus ligula eleifend id nisl quis
+                            interdum.
+                        </p>
+                        <button>Reply</button>
+                    </div>
+                </div>
+                <div class="post-container">
+                    <h3 style="font-weight: 600; margin-bottom: 2px !important">Post A Comment</h3>
+                    <p style="color: #6D6C80; font-size: 0.9rem">Your email address will not be published. Required
+                        fields are marked *</p>
+                    <textarea row="10" name="comment"></textarea>
+                    <div class="flex">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Website">
+                    </div>
+                    <div class="flex">
+                        <input type="checkbox" id="agree" name="agree" style="margin-right: 10px;">
+                        <p style="color: #6D6C80; font-size: 0.9rem">Save my name, email, and website in this browser
+                            for the next time I comment.</p>
+                    </div>
+                    <button>Post Comment<span><img src="{% static 'assets/blog/arrow-right.png' %}" alt=""
+                                width="15px"></span></button>
+                </div>
+
+            </div>
+            <div class="blog-right-section">
+                <div class="search-container flex">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="text" name="search" placeholder="Search here">
+                </div>
+                <div class="categories-container">
+                    <h5 style="font-weight: 600; font-size: 1.2rem">Categories</h5>
+                    <ul>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Art & Design</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Business</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Data Science</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Development</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Finance</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Health & Fitness</li>
+                        <li><span><i class="fa fa-chevron-right" aria-hidden="true"></i></span>Lifestyle</li>
+                    </ul>
+                </div>
+                <div class="post-container">
+                    <h5 style="font-weight: 600; font-size: 1.2rem">Latest Post</h5>
+                    <div class="flex post">
+                        <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="" class="post-img">
+                        <div class="block">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>April 13, 2024</p>
+                            </div>
+                            <h6>The Right Learning
+                                Path for your</h6>
+                        </div>
+                    </div>
+                    <div class="flex post">
+                        <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="" class="post-img">
+                        <div class="block">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>April 13, 2024</p>
+                            </div>
+                            <h6>The Growing Need
+                                Management</h6>
+                        </div>
+                    </div>
+                    <div class="flex post">
+                        <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="" class="post-img">
+                        <div class="block">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>April 13, 2024</p>
+                            </div>
+                            <h6>The Right Learning
+                                Path for your</h6>
+                        </div>
+                    </div>
+                    <div class="flex post">
+                        <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="" class="post-img">
+                        <div class="block">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>April 13, 2024</p>
+                            </div>
+                            <h6>The Growing Need
+                                Management</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-container">
+                    <h5 style="font-weight: 600; font-size: 1.2rem">Tags</h5>
+                    <div class="flex">
+                        <p>Education</p>
+                        <p>Training</p>
+                        <p>Online</p>
+                        <p>Learn</p>
+                        <p>Course</p>
+                        <p>LMS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="articles-container">
+            <h6 style="font-size: 1.1rem; margin-bottom: 20px">Recommended Articles</h6>
+            <div class="articles flex">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="">
+                            <p>Trending</p>
+                        </div>
+                        <div class="flex small-details">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>20 July, 2024</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <p>by Admin</p>
+                            </div>
+                        </div>
+                        <h5 style="line-height: 25px">Get Started With UI Design
+                            With Tips To Speed</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <h6>Get Started With UI Design With Tips To Speed</h6>
+                    <p>Here, will be the description of the blog and the entire details of the course will be
+                        given here Here, will be the description of the course and the entire details of the
+                        course will be given here </p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="articles flex reverse">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="">
+                            <p>Trending</p>
+                        </div>
+                        <div class="flex small-details">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>20 July, 2024</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <p>by Admin</p>
+                            </div>
+                        </div>
+                        <h5 style="line-height: 25px">Get Started With UI Design
+                            With Tips To Speed</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <h6>Get Started With UI Design With Tips To Speed</h6>
+                    <p>Here, will be the description of the blog and the entire details of the course will be
+                        given here Here, will be the description of the course and the entire details of the
+                        course will be given here </p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="articles flex">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="">
+                            <p>Trending</p>
+                        </div>
+                        <div class="flex small-details">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>20 July, 2024</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <p>by Admin</p>
+                            </div>
+                        </div>
+                        <h5 style="line-height: 25px">Get Started With UI Design
+                            With Tips To Speed</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <h6>Get Started With UI Design With Tips To Speed</h6>
+                    <p>Here, will be the description of the blog and the entire details of the course will be
+                        given here Here, will be the description of the course and the entire details of the
+                        course will be given here </p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="articles flex reverse">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="">
+                            <p>Trending</p>
+                        </div>
+                        <div class="flex small-details">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>20 July, 2024</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <p>by Admin</p>
+                            </div>
+                        </div>
+                        <h5 style="line-height: 25px">Get Started With UI Design
+                            With Tips To Speed</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <h6>Get Started With UI Design With Tips To Speed</h6>
+                    <p>Here, will be the description of the blog and the entire details of the course will be
+                        given here Here, will be the description of the course and the entire details of the
+                        course will be given here </p>
+                    <button>Explore</button>
+                </div>
+            </div>
+            <div class="articles flex">
+                <div class="card-container">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="{% static 'assets/blog/blog-main-img.jpeg' %}" alt="">
+                            <p>Trending</p>
+                        </div>
+                        <div class="flex small-details">
+                            <div class="flex">
+                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                <p>20 July, 2024</p>
+                            </div>
+                            <div class="flex">
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                <p>by Admin</p>
+                            </div>
+                        </div>
+                        <h5 style="line-height: 25px">Get Started With UI Design
+                            With Tips To Speed</h5>
+                    </div>
+                </div>
+                <div class="content">
+                    <h6>Get Started With UI Design With Tips To Speed</h6>
+                    <p>Here, will be the description of the blog and the entire details of the course will be
+                        given here Here, will be the description of the course and the entire details of the
+                        course will be given here </p>
+                    <button>Explore</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.categories');
+            const categoryList = document.querySelector('.main-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainCategories = document.querySelectorAll('.main-category li');
+            const categoryLists = document.querySelectorAll('.category');
+
+            mainCategories.forEach(function (mainCategory, index) {
+                mainCategory.addEventListener('click', function () {
+                    // Hide all category lists
+                    const categoryList = categoryLists[index];
+                    categoryList.style.display = (categoryList.style.display === 'none') ? 'block' : 'none';
+
+                    // Hide all other category lists
+                    categoryLists.forEach(function (category, idx) {
+                        if (idx !== index) {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.getElementById('toggleProfile').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.profile-container');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.getElementById('toggleMenu').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.menu-categories');
+            profileContainer.classList.toggle('inactive');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

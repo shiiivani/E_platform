@@ -1,0 +1,563 @@
+html, body {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+body p {
+    margin: 0
+}
+
+body h5 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.navbar {
+    width: 100% !important;
+    background-color: rgba(109, 98, 124, 1) !important;
+    padding: 10px !important;
+}
+
+.navbar .left-section , .right-section {
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    margin-right: 10px;
+}
+
+.left-section .fa-bars {
+    font-size: 1.8rem;
+    margin-right: 13px;
+    color: #fff;
+}
+
+.right-section  .categories, .right-section .learnings {
+    color: #fff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 15px 0 0!important
+}
+
+.right-section .categories:hover,
+.right-section .learnings,
+.right-section li:hover {
+    cursor: pointer
+}
+
+.right-section ul {
+    list-style: none;
+    background-color: #fff;
+    padding: 15px 25px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 0 9.1px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 2;
+}
+
+
+.right-section ul li {
+    padding-top: 20px;
+    font-size: 0.9rem;
+ }
+
+.right-section .main-category, .right-section .learnings-category {
+    top: 70px;
+    right: 5px;
+}
+
+.right-section .learnings-category {
+    top: 70px;
+    right: 150px;
+}
+
+.right-section .category {
+    top: 70px;
+    right: 285px;
+}
+
+ .right-section .main-category, .right-section .learnings-category , .right-section .web-development-category,  .right-section .mobile-developement-category,  .right-section .programming-category,  .right-section .engineering-category,  .right-section .block-chain-category,  .right-section .iot-category,  .right-section .cloud-category,  .right-section .data-science-category,  .right-section .cybersecurity-category {
+    display: none;
+ }
+
+.searchBar {
+    position: relative;
+}
+
+.searchBar input{
+    background-color: #fff;
+    padding: 5px;
+    padding-left: 30px;
+    width: 250px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.searchBar .fa {
+    position: absolute;
+    left: 7px;
+    top: 8px;
+}
+
+.right-section .fa {
+    font-size: 1.6rem;
+    margin: 0 15px 0 0 !important;
+}
+
+.right-section .btn {
+padding: 7px 20px;
+background-color: #fff;
+margin-right: 15px;
+font-size: 0.8rem;
+font-weight: 500;
+border-radius: 0;
+}
+
+.right-section .profile-container {
+    background-color: #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+}
+
+.profile-container .profile-btn {
+    border: 1px solid #000;
+    padding: 5px 15px;
+}
+
+.profile-btn:hover {
+    border-radius: 5px;
+}
+
+.profile-btn:hover {
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.profile-container.inactive {
+    display: none;
+}
+
+
+.left-section .menu-categories {
+    background-color: #BDADAD;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 35px;
+    width: 350px;
+    overflow: hidden;
+}
+
+.menu-categories.inactive {
+    display: none;
+}
+
+.left-section .menu-categories img {
+    position: absolute;
+    z-index: 0;
+}
+
+.menu-categories .first-image {
+    top: -15px;
+    left: -15px;
+}
+
+.menu-categories .second-image {
+    top: -15px;
+    right: -65px;
+}
+
+.menu-categories .fourth-image {
+    bottom: 0;
+    left: -65px;
+}
+
+.menu-categories .third-image {
+    bottom: 40px;
+    right: -30px;
+}
+
+.menu-categories .menu-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.menu-container ul {
+    padding-left: 0 !important;
+}
+
+.menu-container ul li {
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid transparent;
+    cursor: pointer;
+}
+
+.menu-container li:hover {
+    border-bottom: 1.5px solid #000;
+}
+
+.first-section,
+.second-section {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    margin: 2%;
+    padding: 30px;
+    border: 1px solid #B29E9E;
+    box-shadow: 0px 3px 4px 0px #00000030;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header-container p{
+    padding: 10px 30px;
+    background-color: #6D627C;
+    border: 5px solid #6D627C;
+    font-weight: 600;
+    color: #fff
+
+}
+
+.header-container button {
+    border: 5px solid #6D627C;
+    padding: 10px 30px;
+    background-color: #fff;
+    font-weight: 600;
+    color: #6D627C
+}
+
+.header-container button:hover {
+    cursor: pointer;
+    background-color: #6D627C;
+    color: #fff;
+}
+
+.second-container {
+    margin: 2%;
+    padding: 30px;
+    border: 1px solid #00000099;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.second-container .message-container {
+    width: 10%;
+}
+
+.second-container .input-container {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.second-container .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    margin: 10px;
+    width: 100%;
+}
+
+.form-group label,
+.form-group h6 {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    margin: 10px;
+    width: 70%;
+}
+
+.form-group textarea, .form-group input {
+    margin-left: 25px
+}
+
+.form-group input {
+    background: #C1BDBD;
+}
+
+.input-container button {
+    align-self: flex-end;
+    background: #DBC3FB;
+border: none;
+border-radius: 30px;
+padding: 10px 30px
+}
+
+.input-container button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.fileUpload {
+    margin-left: 23px;
+    background: #C1BDBD;
+    border: 1px solid #00000080;
+    padding: 10px 20px;
+    font-weight: 500 !important;
+    font-size: 1rem !important;
+}
+
+.second-container .message-container i{
+font-size: 3.5rem;
+background-color: #D9D9D9;
+padding: 7px 15px;
+border-radius: 50%;
+}
+
+.message-container.second {
+    width: 5% !important;
+}
+
+.second-header .ticket-container {
+    margin-right: 3%;
+}
+
+.second-container  .ticket-container {
+   width: 80%;
+   text-align: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+.ticket-container .ticket {
+    width: 100%;
+    border: 1px solid #000;
+    border-bottom: none;
+    padding: 2%;
+    justify-content: space-between;
+}
+
+.ticket-container .ticket:last-child {
+    border-bottom: 1px solid #000
+}
+
+.ticket p {
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.ticket button {
+    align-self: flex-end;
+    background: #DBC3FB;
+border: none;
+border-radius: 30px;
+padding: 10px 50px
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+position: fixed;
+top: 0;
+left: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+display: none;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal-container .chat-container {
+    background-color: #fff;
+    width: 500px;
+    height: 80%;
+    padding: 40px;
+}
+
+.chat-container .chat-box {
+    background: #DBCECE;
+    border: 1px solid #00000099;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 20px;
+    height: 100%;
+    position: relative
+}
+
+.chatbox-header {
+    background-color: #7B6E6E;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    position: relative;
+    top: 5px;
+    left: 7px;
+    right: 7px;
+    width: 97%;
+    margin-bottom: 20px;
+}
+
+.chatbox-body {
+    padding: 10px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.message {
+    padding: 8px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.message.left {
+    background-color: #e1e1e1;
+    align-self: flex-start;
+}
+
+.message.right {
+    background-color: #7B6E6E;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+
+.chatbox-footer input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    outline: none;
+    width: 100%;
+}
+
+.chatbox-footer button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background-color: #7B6E6E;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.chatbox-footer button:hover {
+    background-color: #7B6E6E;
+}
+
+
+
+@media screen and (max-width: 790px) {
+    .navbar .left-section .searchBar input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .navbar .right-section .learnings {
+        display: none;
+    }
+
+    .second-container {
+        flex-direction: column;
+    }
+
+    .second-container .input-container {
+        width: 100%;
+    }
+
+    .second-container .message-container {
+        align-self: flex-start;
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar .right-section .categories {
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+    .navbar .left-section .searchBar {
+        display: none;
+    }
+}

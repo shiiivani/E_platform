@@ -1,0 +1,410 @@
+html, body {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    height: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none !important;
+    color: #000 !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #000;
+}
+
+body p {
+    margin: 0
+}
+
+body h5 {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.navbar {
+    width: 100% !important;
+    background-color: rgba(109, 98, 124, 1) !important;
+    padding: 10px !important;
+}
+
+.navbar .left-section , .right-section {
+    display: flex;
+    align-items: center !important;
+    justify-content: center;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: #D9D9D9;
+    margin-right: 10px;
+}
+
+.left-section .fa-bars {
+    font-size: 1.8rem;
+    margin-right: 13px;
+    color: #fff;
+}
+
+.right-section  .categories, .right-section .learnings {
+    color: #fff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0 15px 0 0!important
+}
+
+.right-section .categories:hover,
+.right-section .learnings,
+.right-section li:hover {
+    cursor: pointer
+}
+
+.right-section ul {
+    list-style: none;
+    background-color: #fff;
+    padding: 15px 25px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 0 9.1px 0 rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 2;
+}
+
+
+.right-section ul li {
+    padding-top: 20px;
+    font-size: 0.9rem;
+ }
+
+.right-section .main-category, .right-section .learnings-category {
+    top: 70px;
+    right: 5px;
+}
+
+.right-section .learnings-category {
+    top: 70px;
+    right: 150px;
+}
+
+.right-section .category {
+    top: 70px;
+    right: 285px;
+}
+
+ .right-section .main-category, .right-section .learnings-category , .right-section .web-development-category,  .right-section .mobile-developement-category,  .right-section .programming-category,  .right-section .engineering-category,  .right-section .block-chain-category,  .right-section .iot-category,  .right-section .cloud-category,  .right-section .data-science-category,  .right-section .cybersecurity-category {
+    display: none;
+ }
+
+.searchBar {
+    position: relative;
+}
+
+.searchBar input{
+    background-color: #fff;
+    padding: 5px;
+    padding-left: 30px;
+    width: 250px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.searchBar .fa {
+    position: absolute;
+    left: 7px;
+    top: 8px;
+}
+
+.right-section .fa {
+    font-size: 1.6rem;
+    margin: 0 15px 0 0 !important;
+}
+
+.right-section .btn {
+padding: 7px 20px;
+background-color: #fff;
+margin-right: 15px;
+font-size: 0.8rem;
+font-weight: 500;
+border-radius: 0;
+}
+
+.right-section .profile-container {
+    background-color: #E8E8E8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+}
+
+.profile-container .profile-btn {
+    border: 1px solid #000;
+    padding: 5px 15px;
+}
+
+.profile-btn:hover {
+    border-radius: 5px;
+}
+
+.profile-btn:hover {
+    border-radius: 5px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.profile-container.inactive {
+    display: none;
+}
+
+
+.left-section .menu-categories {
+    background-color: #BDADAD;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 35px;
+    width: 350px;
+    overflow: hidden;
+}
+
+.menu-categories.inactive {
+    display: none;
+}
+
+.left-section .menu-categories img {
+    position: absolute;
+    z-index: 0;
+}
+
+.menu-categories .first-image {
+    top: -15px;
+    left: -15px;
+}
+
+.menu-categories .second-image {
+    top: -15px;
+    right: -65px;
+}
+
+.menu-categories .fourth-image {
+    bottom: 0;
+    left: -65px;
+}
+
+.menu-categories .third-image {
+    bottom: 40px;
+    right: -30px;
+}
+
+.menu-categories .menu-container {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.menu-container ul {
+    padding-left: 0 !important;
+}
+
+.menu-container ul li {
+    list-style: none;
+    margin-bottom: 20px;
+    border-bottom: 1.5px solid transparent;
+    cursor: pointer;
+}
+
+.menu-container li:hover {
+    border-bottom: 1.5px solid #000;
+}
+
+.course-overview-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 100%;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar {
+    width: 450px;
+    height: 100%;
+    padding: 20px;
+    border-right: 1px solid #00000033 ;
+    border-bottom: 1px solid #00000033 ;
+    text-align: center;
+    height: 100vh;
+}
+
+
+.sidebar h6 {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+.sidebar-items {
+    text-align: left;
+    margin-top: 50px;
+}
+
+.sidebar .options {
+    font-size: 1rem;
+    font-weight: 500; 
+    padding: 15px;
+    margin: 10px;
+}
+
+.sidebar .options:hover {
+    cursor: pointer;
+}
+
+.sidebar-items .flex {
+    padding:8px;
+    text-align: left;
+}
+
+.sidebar-item .flex:hover {
+    cursor: pointer;
+}
+
+.sidebar-items .flex.active {
+    background-color: #E2DCDC;
+    border-left: 3px solid #000;
+}
+
+.right-container {
+    width: 100%;
+    padding: 20px;
+}
+.right-container .week-heading {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #371ED1;
+    margin-right: 10px;
+    font-size: 0.97rem;
+    
+}
+
+.right-container .heading {
+    margin-top: 40px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.right-container .quiz-details {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.quiz-details p {
+    font-size: 0.97rem
+}
+
+.quiz-details button {
+    padding: 15px 30px;
+    border: none;
+    background: #E8DEDE;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.98rem
+}
+
+.quiz-details button:hover {
+cursor: pointer;
+background: #5A5361;
+color: #fff;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    margin: 15px 0
+}
+.grade-container .block{
+width: 50%;
+}
+.grade-container .block p {
+    margin-top: 15px;
+    font-size: 0.98rem
+}
+.grade-container .block h6 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.grade-container .block:last-child {
+    border-left: 1px solid #000;
+    padding-left: 15px;
+}
+
+.like-buttons .flex{
+margin-right: 25px;
+}
+.like-buttons .flex i {
+    margin-right: 8px;
+    font-size: 1.3rem
+}
+.like-buttons .flex i:hover {
+    cursor: pointer;
+}
+.like-buttons .flex p {
+    font-size: 1.1rem
+
+}
+
+@media screen and (max-width: 790px) {
+    .navbar .left-section .searchBar input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 735px) {
+    .navbar .right-section .learnings {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar .right-section .categories {
+        display: none
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+    .navbar .left-section .searchBar {
+        display: none;
+    }
+}

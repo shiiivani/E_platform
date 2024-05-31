@@ -1,0 +1,395 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/roadmap_after_pg_in_comm.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Righteous&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .profile-btn:hover {
+            border-radius: 5px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-container.inactive {
+            display: none;
+        }
+
+
+        .left-section .menu-categories {
+            background-color: #BDADAD;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            padding: 35px;
+            width: 350px;
+            overflow: hidden;
+        }
+
+        .menu-categories.inactive {
+            display: none;
+        }
+
+        .left-section .menu-categories img {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .menu-categories .first-image {
+            top: -15px;
+            left: -15px;
+        }
+
+        .menu-categories .second-image {
+            top: -15px;
+            right: -65px;
+        }
+
+        .menu-categories .fourth-image {
+            bottom: 0;
+            left: -65px;
+        }
+
+        .menu-categories .third-image {
+            bottom: 40px;
+            right: -30px;
+        }
+
+        .menu-categories .menu-container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            position: relative;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-container ul {
+            padding-left: 0 !important;
+        }
+
+        .menu-container ul li {
+            list-style: none;
+            margin-bottom: 20px;
+            border-bottom: 1.5px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-container li:hover {
+            border-bottom: 1.5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <i id="toggleMenu" class="fa fa-bars" aria-hidden="true" style="cursor: pointer"></i>
+            <div class="menu-categories inactive">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="first-image" width="180px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="second-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="third-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="fourth-image" width="200px"
+                    alt="Stack of Books">
+                <div class="menu-container">
+                    <ul>
+                        <a href="{% url 'my_course' %}">
+                            <li>My Courses</li>
+                        </a>
+                        <a href="{% url 'certificate' %}">
+                            <li>Certificates</li>
+                        </a>
+                        <a href="{% url 'ticket' %}">
+                            <li>Support & Help</li>
+                        </a>
+                        <a href="{% url 'referral' %}">
+                            <li>Referral Program</li>
+                        </a>
+                        <a href="{% url 'payment_history' %}">
+                            <li>Payment History</li>
+                        </a>
+                        <a href="{% url 'blog' %}">
+                            <li>Blog</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+            <a href="{% url 'landing_page_after_login' %}">
+                <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
+
+            </a>
+            <div class="searchBar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="search" name="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="right-section">
+            <p class="learnings">My Learnings</p>
+            <ul class="learnings-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <p class="categories">Categories</p>
+            <ul class="main-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <ul class="web-development-category category">
+                <li>HTML / CSS</li>
+                <li>Javascript</li>
+                <li>Bootstrap</li>
+                <li>React Js</li>
+                <li>Angular</li>
+                <li>Node Js</li>
+                <li>Express Js</li>
+            </ul>
+            <ul class="mobile-developement-category category">
+                <li>Android Development with Java/ Kotlin
+                </li>
+                <li>iOS Development with Swift</li>
+                <li> React Native </li>
+            </ul>
+            <ul class="programming-category category">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Ruby</li>
+                <li>PHP</li>
+                <li>Go</li>
+            </ul>
+            <ul class="engineering-category category">
+                <li>Software Development Lifecycle (SDLC)</li>
+                <li>Agile and Scrum</li>
+                <li> DevOps Principles</li>
+                <li>Software Testing and Quality Assurance</li>
+            </ul>
+            <ul class="block-chain-category category">
+                <li>Blockchain Fundamentals</li>
+                <li> Smart Contract Development</li>
+                <li>Cryptocurrency and Bitcoin Basic</li>
+            </ul>
+            <ul class="iot-category category">
+                <li>Introduction to loT
+                </li>
+                <li>IoT Platforms and Technologies
+                </li>
+                <li> IoT Security and Privacy</li>
+            </ul>
+            <ul class="cloud-category category">
+                <li> Introduction to Cloud Computing
+                </li>
+                <li>Amazon Web Services (AWS)
+                </li>
+                <li>Microsoft Azure</li>
+                <li>Google Cloud Platform (GCP)</li>
+                <li>DevOps Practices and Tools</li>
+            </ul>
+            <ul class="data-science-category category">
+                <li>Python for Data Science
+                </li>
+                <li>Data Analysis with Pandas
+                </li>
+                <li>NumPy and SciPy</li>
+                <li>Machine Learning Fundamentals</li>
+                <li>Deep Learning with TensorFlow or PyTorch</li>
+                <li>Natural Language Processing</li>
+            </ul>
+            <ul class="cybersecurity-category category">
+                <li> Introduction to Cybersecurity
+                </li>
+                <li>Ethical Hacking
+                </li>
+                <li>Network Security</li>
+                <li>Web Application Security</li>
+                <li> Cryptography</li>
+                <li> Incident Response and Forensics</li>
+            </ul>
+            <a href="{% url 'profile_page' %}">
+                <img class="logo" src="{% static 'assets/user.png' %}" alt="">
+
+            </a>
+            <p style="color: #fff; font-size: 0.9rem; margin-right: 10px">Student's Name</p>
+            <img id="toggleProfile" src="{% static 'assets/roadmap/down-arrow.png' %}" width="25px" alt=""
+                style="cursor: pointer">
+            <div class="profile-container inactive">
+                <a href="{% url 'profile_page' %}"><button class="profile-btn">Profile Setting Page</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="article">
+        <div style="text-align: center;">
+            <img src="{% static 'assets/roadmap/commerce.jpg'%}" alt="">
+        </div>
+        <h5>Career Options After Post-Graduation in Commerce</h5>
+        <p>Master of Commerce graduates can access a pool of opportunities in various business domains and management
+            industries. With a degree in hand, you can go for the following job positions - Company Secretary, Auditor,
+            Business Analyst, Consultant, Tax Accountant, Stock Broker, Finance Officer, Sales Analyst, and Economist.
+            Moreover, you have significant positions to appear in government exams applying for public sector jobs. Here
+            are some reliable career options after M. Com:</p>
+        <h6>1.Accounts/Finance Manager</h6>
+        <p>Financial Institutions and Organizational Banks, including Yes Bank or Canara Bank, offer job roles like
+            Money Manager, Cashier, Money Teller, Assistant Accountant, etc. You can enroll for relative courses that
+            help you pursue the field of your interest. Aurora degree and PG college give you comprehensive courses to
+            help you out with successive guides. The paid role varies between INR 3- 4 LPA based on the roles.</p>
+        <h6>2.Chartered Financial Analyst [CFA]</h6>
+        <p>CFA, an acronym for the Chartered Financial Analyst job role, opens a doorway into the investment and finance
+            industry. The position is all about financial analysis, variant bonds and derivatives, kinds of portfolios
+            and investment management. You need to pass through the 3 tiers to apply for CFA. Goldman Sachs, Royal Bank
+            of Canada, and JP Morgan are some top global financial companies offering an average salary of Rs. 6.6 LPA
+            approximately.</p>
+        <h6>3.Financial Risk Manager [FRM]</h6>
+        <p>Risk Management is a flourishing industry in the current vigorous financial market. The financial risk
+            manager position is a great career option after post-graduation in commerce if you are ready to undergo a
+            9-month agenda promoted by the GARP. Being an FRM, you should possess the ability to recognize and examine
+            potential financial threats. You can also explore the services like financial services, credit and market
+            risk, trading management, sales and marketing. The average pay scale for FRM professionals varies between 10
+            to 18 LPA</p>
+        <h6>4.Certified Financial Planner [CFP]</h6>
+        <p>CFP-certified candidates need to undergo a short-term course to examine avenues in finance and insurance
+            companies. This is yet another trend domain, and students actively participate in the course. Some of the
+            best courses offered by Aurora degree and PG college are worth opting for. You need to be good at the
+            following parameters like educational performance, work experience demonstration, along with professional
+            ethics. While going with this career option, you are free to explore the areas of insurance decisions, tax
+            planning, estate planning, retirement, investment management, and many more. The average pay scale of CFP is
+            approximately Rs. 3.9 LPA.
+        </p>
+        <h6>5.Certificate in Investment Banking [CIB]</h6>
+        <p>CIB is an acronym for Certificate in Investment Banking. If you want to raise capital for firms, you can
+            apply to this sector - a 6-month program to sell equity and issue debt. Now, it is a globally known course
+            to check whether you can employ systematic or a means of strategy. The candidate should be able to develop
+            the quotation of listed/unlisted organizations. You get access to coursework like equity research, asset
+            management themes, h corporate finance strategy, hedge funds, and private wealth management. The average pay
+            scale for an investment banking career is around INR 9.6 lakh approximately.</p>
+        <h6>6.Indian Administration Services</h6>
+        <p>A postgraduate candidate in commerce can feasibly enroll for an IAS position by passing a UPSC or other state
+            public service assessment. You can go for jobs in Defence, Railways, PSU, Police, and Revenue departments
+            incorporated by governmental services. The starting pay scale salary for this particular position is INR 6
+            LPA.</p>
+        <h6>7.Teaching & Research</h6>
+        <p>If you want to explore your interest in academic disciplines and business, you can enter the research
+            industry. A doctorate or a Doctor of Philosophy (Ph.D.) is now in majors like Operations Research, Finance,
+            Statistics, Organizational Behaviour, HRM [Human Resource Management], etc. Additionally, there are numerous
+            national and international fellowships to evince high research aptitude in the field of Economics, Commerce,
+            as well as Management. You can also look out to become a university lecturer, despite no job limitations.
+        </p>
+        <h6>Final Thoughts</h6>
+        <p>In this article, we have sorted a list of promising career options after post-graduation in Commerce. We hope
+            you get a precise answer to “What can you pursue after post-graduation?”. To go for the correct choice, you
+            need to analyze the difficulty level, the time required, and the price of the program before deciding on
+            career options. If you go for any of the above options, you tend to land a good job, so gather some more
+            research and start over your journey in the professional world. Make sure you follow the path you desire!
+        </p>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.categories');
+            const categoryList = document.querySelector('.main-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.learnings');
+            const categoryList = document.querySelector('.learnings-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainCategories = document.querySelectorAll('.main-category li');
+            const categoryLists = document.querySelectorAll('.category');
+
+            mainCategories.forEach(function (mainCategory, index) {
+                mainCategory.addEventListener('click', function () {
+                    // Hide all category lists
+                    const categoryList = categoryLists[index];
+                    categoryList.style.display = (categoryList.style.display === 'none') ? 'block' : 'none';
+
+                    // Hide all other category lists
+                    categoryLists.forEach(function (category, idx) {
+                        if (idx !== index) {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.getElementById('toggleProfile').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.profile-container');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.getElementById('toggleMenu').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.menu-categories');
+            profileContainer.classList.toggle('inactive');
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

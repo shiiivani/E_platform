@@ -1,0 +1,1605 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing_page_after_login.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Righteous&family=Rokkitt:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .questions {
+            width: max-content
+        }
+
+        .profile-btn:hover {
+            border-radius: 5px;
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .profile-container.inactive {
+            display: none;
+        }
+
+
+        .left-section .menu-categories {
+            background-color: #BDADAD;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            padding: 35px;
+            width: 350px;
+            overflow: hidden;
+        }
+
+        .menu-categories.inactive {
+            display: none;
+        }
+
+        .left-section .menu-categories img {
+            position: absolute;
+            z-index: 0;
+        }
+
+        .menu-categories .first-image {
+            top: -15px;
+            left: -15px;
+        }
+
+        .menu-categories .second-image {
+            top: -15px;
+            right: -65px;
+        }
+
+        .menu-categories .fourth-image {
+            bottom: 0;
+            left: -65px;
+        }
+
+        .menu-categories .third-image {
+            bottom: 40px;
+            right: -30px;
+        }
+
+        .menu-categories .menu-container {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #fff;
+            border-radius: 25px;
+            background-color: rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            position: relative;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-container ul {
+            padding-left: 0 !important;
+        }
+
+        .menu-container ul li {
+            list-style: none;
+            margin-bottom: 20px;
+            border-bottom: 1.5px solid transparent;
+            cursor: pointer;
+        }
+
+        .menu-container li:hover {
+            border-bottom: 1.5px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="left-section">
+            <i id="toggleMenu" class="fa fa-bars" aria-hidden="true" style="cursor: pointer"></i>
+            <div class="menu-categories inactive">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="first-image" width="180px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="second-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/stacked-books.png' %}" class="third-image" width="200px"
+                    alt="Stack of Books">
+                <img src="{% static 'assets/roadmap/open-book.png' %}" class="fourth-image" width="200px"
+                    alt="Stack of Books">
+                <div class="menu-container">
+                    <ul>
+                        <a href="{% url 'my_course' %}">
+                            <a href="{% url 'my_course' %}">
+                                <li>My Courses</li>
+                            </a>
+                        </a>
+                        <a href="{% url 'certificate' %}">
+                            <li>Certificates</li>
+                        </a>
+                        <a href="{% url 'ticket' %}">
+                            <li>Support & Help</li>
+                        </a>
+                        <a href="{% url 'referral' %}">
+                            <li>Referral Program</li>
+                        </a>
+                        <a href="{% url 'payment_history' %}">
+                            <li>Payment History</li>
+                        </a>
+                        <a href="{% url 'blog' %}">
+                            <li>Blog</li>
+                        </a>
+                    </ul>
+
+                </div>
+            </div>
+            <a href="{% url 'landing_page_after_login' %}">
+                <!-- <div class="logo"> -->
+                <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
+                <!-- </div> -->
+            </a>
+            <div class="searchBar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" id="search" name="search" placeholder="Search">
+            </div>
+        </div>
+        <div class="right-section">
+            <p class="learnings">My Learnings</p>
+            <ul class="learnings-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <p class="categories">Categories</p>
+            <ul class="main-category">
+                <li class="first-category">Web Development</li>
+                <li class="second-category">Mobile App Development</li>
+                <li class="third-category">Programming Languages</li>
+                <li class="fourth-category"> Software Engineering</li>
+                <li class="fifth-category">Block Chain & Crypto Currency</li>
+                <li class="sixth-category">Internet of things</li>
+                <li class="seventh-category">Cloud Computing</li>
+                <li class="eight-category">Data Science & Machine Learning</li>
+                <li class="ninth-category">Cybersecurity</li>
+                <li class="ninth-category">Stock Market</li>
+                <li class="ninth-category">Graphic Design</li>
+                <li class="ninth-category">UI/UX</li>
+                <li class="ninth-category">Excel (Beginner to Advace)</li>
+                <li class="ninth-category">Digital Marketing</li>
+                <li class="ninth-category">R Language</li>
+            </ul>
+            <ul class="web-development-category category">
+                <li>HTML / CSS</li>
+                <li>Javascript</li>
+                <li>Bootstrap</li>
+                <li>React Js</li>
+                <li>Angular</li>
+                <li>Node Js</li>
+                <li>Express Js</li>
+            </ul>
+            <ul class="mobile-developement-category category">
+                <li>Android Development with Java/ Kotlin
+                </li>
+                <li>iOS Development with Swift</li>
+                <li> React Native </li>
+            </ul>
+            <ul class="programming-category category">
+                <li>Python</li>
+                <li>Java</li>
+                <li>C++</li>
+                <li>C#</li>
+                <li>Ruby</li>
+                <li>PHP</li>
+                <li>Go</li>
+            </ul>
+            <ul class="engineering-category category">
+                <li>Software Development Lifecycle (SDLC)</li>
+                <li>Agile and Scrum</li>
+                <li> DevOps Principles</li>
+                <li>Software Testing and Quality Assurance</li>
+            </ul>
+            <ul class="block-chain-category category">
+                <li>Blockchain Fundamentals</li>
+                <li> Smart Contract Development</li>
+                <li>Cryptocurrency and Bitcoin Basic</li>
+            </ul>
+            <ul class="iot-category category">
+                <li>Introduction to loT
+                </li>
+                <li>IoT Platforms and Technologies
+                </li>
+                <li> IoT Security and Privacy</li>
+            </ul>
+            <ul class="cloud-category category">
+                <li> Introduction to Cloud Computing
+                </li>
+                <li>Amazon Web Services (AWS)
+                </li>
+                <li>Microsoft Azure</li>
+                <li>Google Cloud Platform (GCP)</li>
+                <li>DevOps Practices and Tools</li>
+            </ul>
+            <ul class="data-science-category category">
+                <li>Python for Data Science
+                </li>
+                <li>Data Analysis with Pandas
+                </li>
+                <li>NumPy and SciPy</li>
+                <li>Machine Learning Fundamentals</li>
+                <li>Deep Learning with TensorFlow or PyTorch</li>
+                <li>Natural Language Processing</li>
+            </ul>
+            <ul class="cybersecurity-category category">
+                <li> Introduction to Cybersecurity
+                </li>
+                <li>Ethical Hacking
+                </li>
+                <li>Network Security</li>
+                <li>Web Application Security</li>
+                <li> Cryptography</li>
+                <li> Incident Response and Forensics</li>
+            </ul>
+            <a href="{% url 'profile_page' %}">
+                <img class="logo" src="{% static 'assets/user.png' %}" alt="">
+
+            </a>
+            <p style="color: #fff; font-size: 0.9rem; margin-right: 10px">Student's Name</p>
+            <img id="toggleProfile" src="{% static 'assets/roadmap/down-arrow.png' %}" width="25px" alt=""
+                style="cursor: pointer">
+            <div class="profile-container inactive">
+                <a href="{% url 'profile_page' %}"><button class="profile-btn">Profile Setting Page</button></a>
+            </div>
+        </div>
+    </div>
+    <div class="background-container">
+        <div class="content-container">
+            <h1 class="header" style="padding-left: 5px; padding-right: 5px">WELCOME TO E-LEARNING PROJECT</h1>
+            <p class="sub-heading">"Let's craft our own future, seizing every opportunity that comes our way, including
+                the
+                chance to enrich our
+                lives with diverse courses that build a comprehensive understanding of every concept."</p>
+            <div style="text-align: center;"><button class="purple-button"> Read More</button></div>
+        </div>
+        <div class="image-container">
+            <img class="img2" src="{% static 'assets/landing_page_after_login/headingImg2.png' %}" alt="">
+            <img class="img1" src="{% static 'assets/landing_page_after_login/headingImg1.png' %}" alt="">
+        </div>
+    </div>
+    <div class="second-section">
+        <h4>Our Courses</h4>
+        <p class="all">All</p>
+        <div class="wrapper" style="margin-top: 40px;">
+            <button id="left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+            <div class="carousel">
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page/course-img.png' %}" class="card-img-top" alt="..."
+                            width="250px">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+                        </div>
+                        <div class="view-more">
+                            <a href="{% url 'course_after_login' %}">
+                                <button>View More</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <h4>Name of the course</h4>
+                        <p>(Uploaded date)</p>
+                        <div class="small-details">
+                            <p>1h23min</p>
+                            <p>23eps</p>
+                            <p>Medium</p>
+                        </div>
+                        <p style="font-size: 0.9rem">Small description regarding course and domain</p>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 1 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 2 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 3 to be noted regarding projects involved in course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Points to be noted regarding tools involved in the project</p>
+                        </div>
+                        <div class="button">
+                            <button id="open-modal-btn" class="cart-btn">Add to cart</button>
+                            <div class="like">
+                                <i class="fa fa-heart inactive" aria-hidden="true" style="color: #EF0909"></i>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page/course-img.png' %}" class="card-img-top" alt="..."
+                            width="250px">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+                        <div class="view-more">
+                            <a href="{% url 'course_after_login' %}">
+                                <button>View More</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <h4>Name of the course</h4>
+                        <p>(Uploaded date)</p>
+                        <div class="small-details">
+                            <p>1h23min</p>
+                            <p>23eps</p>
+                            <p>Medium</p>
+                        </div>
+                        <p style="font-size: 0.9rem">Small description regarding course and domain</p>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 1 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 2 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 3 to be noted regarding projects involved in course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Points to be noted regarding tools involved in the project</p>
+                        </div>
+                        <div class="button">
+                            <button id="open-modal-btn" class="cart-btn">Add to cart</button>
+                            <div class="like">
+                                <i class="fa fa-heart inactive" aria-hidden="true" style="color: #EF0909"></i>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page/course-img.png' %}" class="card-img-top" alt="..."
+                            width="250px">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+                        <div class="view-more">
+                            <a href="{% url 'course_after_login' %}">
+                                <button>View More</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <h4>Name of the course</h4>
+                        <p>(Uploaded date)</p>
+                        <div class="small-details">
+                            <p>1h23min</p>
+                            <p>23eps</p>
+                            <p>Medium</p>
+                        </div>
+                        <p style="font-size: 0.9rem">Small description regarding course and domain</p>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 1 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 2 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 3 to be noted regarding projects involved in course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Points to be noted regarding tools involved in the project</p>
+                        </div>
+                        <div class="button">
+                            <button id="open-modal-btn" class="cart-btn">Add to cart</button>
+                            <div class="like">
+                                <i class="fa fa-heart inactive" aria-hidden="true" style="color: #EF0909"></i>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page/course-img.png' %}" class="card-img-top" alt="..."
+                            width="250px">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+                        <div class="view-more">
+                            <a href="{% url 'course_after_login' %}">
+                                <button>View More</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <h4>Name of the course</h4>
+                        <p>(Uploaded date)</p>
+                        <div class="small-details">
+                            <p>1h23min</p>
+                            <p>23eps</p>
+                            <p>Medium</p>
+                        </div>
+                        <p style="font-size: 0.9rem">Small description regarding course and domain</p>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 1 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 2 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 3 to be noted regarding projects involved in course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Points to be noted regarding tools involved in the project</p>
+                        </div>
+                        <div class="button">
+                            <button id="open-modal-btn" class="cart-btn">Add to cart</button>
+                            <div class="like">
+                                <i class="fa fa-heart inactive" aria-hidden="true" style="color: #EF0909"></i>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-container">
+                    <div class="card">
+
+                        <img src="{% static 'assets/landing_page/course-img.png' %}" class="card-img-top" alt="..."
+                            width="250px">
+
+                        <div class=" card-body">
+                            <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                                course</h5>
+                            <p class="academy">Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                            <p>₹3,699</p>
+
+                        </div>
+                        <div class="view-more">
+                            <a href="{% url 'course_after_login' %}">
+                                <button>View More</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="course-details">
+                        <h4>Name of the course</h4>
+                        <p>(Uploaded date)</p>
+                        <div class="small-details">
+                            <p>1h23min</p>
+                            <p>23eps</p>
+                            <p>Medium</p>
+                        </div>
+                        <p style="font-size: 0.9rem">Small description regarding course and domain</p>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 1 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 2 to be noted regarding course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Point 3 to be noted regarding projects involved in course</p>
+                        </div>
+                        <div class="points">
+                            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                            <p>Points to be noted regarding tools involved in the project</p>
+                        </div>
+                        <div class="button">
+                            <button id="open-modal-btn" class="cart-btn">Add to cart</button>
+                            <div class="like">
+                                <i class="fa fa-heart inactive" aria-hidden="true" style="color: #EF0909"></i>
+                                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button id="right"><i id="right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+        </div>
+    </div>
+    <div id="modal-container" class="modal-container">
+        <div id="cart-modal" class="cart-modal">
+            <div class="close">
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+            </div>
+            <h4>Added to Cart</h4>
+            <div class="divider" style="display: flex; align-items: center;justify-content: space-between;">
+                <div class="added-course-container">
+                    <div class="added-course">
+                        <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                            width="200px">
+                        <div class="course-info">
+                            <p>Name of the course</p>
+                            <p>Which Academy</p>
+                            <div class="rating-container">
+                                <p class="rating">4.0</p>
+                                <div class="rating-icons">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                    <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                                </div>
+                                <p class="views">(views)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="cart-btn">Go to cart</button>
+            </div>
+        </div>
+    </div>
+    <h4 style="font-weight: 600; font-size: 1.3rem; text-align: center;">Top Viewed Courses</h4>
+    <div class="wrapper" style="margin-top: 10px; margin-bottom: 60px">
+        <button id="left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+        <div class="carousel" style="padding-top: 10px; padding-bottom: 10px">
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                        width="250px">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                        width="250px">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                        width="250px">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                        width="250px">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page/course.png' %}" class="card-img-top" alt="..."
+                        width="250px">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <button id="right"><i id="right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+    </div>
+    <h4 style="font-weight: 600; font-size: 1.3rem; text-align: center;">Tech Courses</h4>
+    <div class="course-names-container">
+        <p class="course-name">WEB DEVELOPMENT</p>
+        <p class="course-name">MOBILE APP DEVELOPMENT</p>
+        <p class="course-name">PROGRAMMING LANGUAGES</p>
+        <p class="course-name">SOFTWARE ENGINEERING</p>
+        <p class="course-name">INTERNET OF THINGS</p>
+        <p class="course-name">CLOUD COMPUTING</p>
+        <p class="course-name">CYBER SECURITY</p>
+        <p class="course-name">DATA SCIENCE & MACHINE LEARNING</p>
+        <p class="course-name">GRAPHIC DESIGN</p>
+        <p class="course-name">STOCK MARKET</p>
+        <p class="course-name">UI/UX</p>
+        <p class="course-name">EXCEL(BEGINEER TO ADVANCE)</p>
+        <p class="course-name">DIGITAL MARKETING</p>
+        <p class="course-name">R LANGUAGE</p>
+    </div>
+    <div class="fifth-heading" style="text-align: center; width: 25%;margin-left: auto; margin-right: auto;">
+        <h4 style="font-weight: 600; font-size: 1.3rem; text-align: center;"> Grade 9 - 12 CBSE Courses
+            as per NCERT curriculum</h4>
+        <p style="font-weight: 300; font-size: 1rem;margin-top: 5px;">NCERT Courses for Students 9-12</p>
+    </div>
+    <div class="wrapper" style="margin-top: 25px; margin-bottom: 60px">
+        <button id="left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+        <div class="carousel" style="padding-top: 10px; padding-bottom: 10px">
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/ncert-course.png' %}" class="card-img-top"
+                        alt="..." width="250px">
+
+                    <div class=" card-body">
+                        <p class="academy">Academy Name</p>
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Class 9th Math
+                            NCERT</h5>
+                        <p class="academy">Duration</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                    <div class="line"></div>
+                    <p style="font-weight: 600; text-align: center;margin-bottom: 10px;">View Course</p>
+                </div>
+
+            </div>
+
+        </div>
+        <button id="right"><i id="right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+    </div>
+
+    <h4 style="font-weight: 600; font-size: 1.3rem; text-align: left;margin-left: 5%;">Trending Now</h4>
+    <div class="line" style="width: 90%;margin-left: auto; margin-right: auto;"></div>
+    <div class="trending-container">
+        <div class="first-container trend-containers">
+            <a href="{% url 'blog' %}" class="link">See UI design blogs <span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></a>
+            <a href="{% url 'blog_details' %}" class="trend-btn">Show all Trending Blogs</a>
+            <p style="font-weight: 600; position: relative; bottom: -50px; width: 80%;">Get Started With UI Design
+                With Tips To Speed</p>
+        </div>
+        <div class="second-container trend-containers">
+            <h5>Web Development</h5>
+            <h6>Javascript</h6>
+            <p class="link">See Javascript blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>Angular Js</h6>
+            <p class="link">See Angular Js blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>React Js</h6>
+            <p class="link">See React Js blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>Node Js</h6>
+            <p class="link">See Node Js blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+        </div>
+        <div class="third-container trend-containers">
+            <h5>Software Engineering</h5>
+            <h6>Software Development Lifecycle</h6>
+            <p class="link">See SDLC blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>Agile and Scrum</h6>
+            <p class="link">See Agile and Scrum blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>DevOps Principles</h6>
+            <p class="link">See DevOps Principles blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>Software Testing and Quality Assurance</h6>
+            <p class="link">See STQA blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+        </div>
+        <div class="fourth-container trend-containers">
+            <h5>Programming languages</h5>
+            <h6>Python</h6>
+            <p class="link">See Python blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>Java</h6>
+            <p class="link">See Java blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>C++</h6>
+            <p class="link">See C++ blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+            <h6>PHP</h6>
+            <p class="link">See PHP blog<span><img style="transform: rotate(90deg)"
+                        src="{% static 'assets/up-arrow.png' %}" alt="Icon" width="15px"></span></p>
+        </div>
+    </div>
+    <div class="seventh-section">
+        <h4 style="font-weight: 600; font-size: 1.2rem; text-align: center;">Choose the program which is right for your
+            goals</h4>
+        <div class="programmes-containers">
+            <div class="programme" style="padding-top: 50px">
+                <h5>Single learning program</h5>
+                <p style="width: 90%; margin-left: auto; margin-right: auto;font-weight: 300;">Learn the specialized
+                    courses here</p>
+                <div class="inside-container">
+                    <h4>₹4,087 </h4>
+                    <p style="font-weight: 500; font-size: 0.85rem; opacity: 0.4 ">Cancel Anytime</p>
+                </div>
+                <div class="inside-container">
+                    <p>Visit an individual course or specialize your page to purchase</p>
+                </div>
+                <p>Earn a certification upon completion</p>
+                <div class="line"></div>
+                <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                            aria-hidden="true"></i></span>Data Science & Machine
+                    Learning course</p>
+                <div class="line"></div>
+                <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                            aria-hidden="true"></i></span>Cloud computing</p>
+            </div>
+            <a href="{% url 'e_learning_plus' %}">
+                <div class="programme">
+                    <h5 style="margin-bottom: 50px; background: rgba(189, 173, 173, 1); padding: 3px;
+                ">Most popular program</h5>
+                    <h5>E-Learning Plus</h5>
+                    <p style="width: 90%; margin-left: auto; margin-right: auto;font-weight: 300;">Complete multiple
+                        courses
+                        in short term in
+                        this program</p>
+                    <div class="inside-container">
+                        <h4>₹4,087 - ₹6,509</h4>
+                        <p style="font-weight: 500; font-size: 0.85rem; opacity: 0.4 ">Cancel Anytime</p>
+                    </div>
+                    <div class="inside-container">
+                        <p>Visit an individual course or specialize your page to purchase</p>
+                    </div>
+                    <p>Earn unlimited certificates</p>
+                    <div class="line"></div>
+                    <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                                aria-hidden="true"></i></span>HTML/CSS</p>
+                    <div class="line"></div>
+                    <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                                aria-hidden="true"></i></span>Javascript</p>
+                    <div class="line"></div>
+                    <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                                aria-hidden="true"></i></span>Bootstrap</p>
+                    <div class="line"></div>
+                    <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                                aria-hidden="true"></i></span>React Js</p>
+                    <div class="line"></div>
+                    <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                                aria-hidden="true"></i></span>Angular Js</p>
+                </div>
+            </a>
+            <div class="programme" style="padding-top: 50px">
+                <h5>Learning program</h5>
+                <p style="width: 90%; margin-left: auto; margin-right: auto;font-weight: 300;">Learn the specialized
+                    courses here</p>
+                <div class="inside-container">
+                    <h4>₹5,087</h4>
+                    <p style="font-weight: 500; font-size: 0.85rem; opacity: 0.4; ">Cancel Anytime</p>
+                </div>
+                <div class="inside-container">
+                    <p>Visit an individual course or specialize your page to purchase</p>
+                </div>
+                <p>Earn a certification upon completion</p>
+                <div class="line"></div>
+                <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                            aria-hidden="true"></i></span>DevOps Practices and tools
+                </p>
+                <div class="line"></div>
+                <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                            aria-hidden="true"></i></span>Microsoft Azure</p>
+                <div class="line"></div>
+                <p class="points"><span style="margin-right: 15px;"><i class="fa fa-check"
+                            aria-hidden="true"></i></span>AWS</p>
+            </div>
+        </div>
+    </div>
+    <div class="course-container">
+        <div class="course-card">
+            <img src="{% static 'assets/landing_page_after_login/tech.png'%}" width="100%" alt="">
+            <i class="fa fa-cog" aria-hidden="true"></i>
+            <div class="card-content">
+                <h4 class="title">Tech Courses</h4>
+                <a href="{% url 'tech_courses' %}">
+                    <div style="text-align: center;">
+                        <button class="purple-button">View More</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="{% static 'assets/landing_page_after_login/study-table.png'%}" width="100%" alt="">
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+            <div class="card-content">
+                <h4 class="title">Grade 9 - 12 CBSE Courses
+                    as per NCERT curriculum</h4>
+                <a href="{% url 'ncert_courses' %}">
+                    <div style="text-align: center;">
+                        <button class="purple-button">View More</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="course-card">
+            <img src="{% static 'assets/landing_page_after_login/roadmap.png'%}" width="100%" height="240px" alt="">
+            <i class="fa fa-lightbulb-o" aria-hidden="true" style="padding: 10px 20px; top: 45%"></i>
+            <div class="card-content">
+
+                <h4 class="title">Career Roadmap</h4>
+
+                <a href="{% url 'roadmap' %}">
+                    <div style="text-align: center;">
+                        <button class="purple-button">View More</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <h4 style="font-weight: 600; font-size: 1.3rem; text-align: center;">Featured Courses For You</h4>
+    <div class="wrapper" style="margin-top: 10px; margin-bottom: 60px">
+        <button id="left"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></button>
+        <div class="carousel" style="padding-top: 10px; padding-bottom: 10px">
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}" class="card-img-top"
+                        alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}" class="card-img-top"
+                        alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}" class="card-img-top"
+                        alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}" class="card-img-top"
+                        alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="card-container">
+                <div class="card">
+
+                    <img src="{% static 'assets/landing_page_after_login/featured-course.png' %}" class="card-img-top"
+                        alt="..." width="100px" height="180px;" style="object-fit: cover;">
+
+                    <div class=" card-body">
+                        <h5 class="card-title" style="font-weight: 600; font-size: 1.2rem; color: #000">Name of the
+                            course</h5>
+                        <p class="academy">Which Academy</p>
+                        <div class="rating-container">
+                            <p class="rating">4.0</p>
+                            <div class="rating-icons">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/favourite.png' %}" alt="" width="17px">
+                                <img src="{% static 'assets/landing_page/star.png' %}" alt="" width="17pxpx">
+                            </div>
+                            <p class="views">(views)</p>
+                        </div>
+                        <p>₹3,699</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <button id="right"><i id="right" class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
+    </div>
+    <h4 style="font-weight: 600; font-size: 1.3rem; text-align: center;">Top Recommendations For You</h4>
+    <div class="course-names-container">
+        <p class="course-name2">
+            DATA SCIENCE & MACHINE LEARNING
+        </p>
+        <p class="course-name2">
+            CYBERSECURITY</p>
+        <p class="course-name2">
+            REACT JS</p>
+        <p class="course-name2">
+            UI/UX</p>
+        <p class="course-name2">
+            iOS DEVELPMENT WITH SWIFT</p>
+        <p class="course-name2">
+            VEDIC MATHS</p>
+        <p class="course-name2">
+            GRAPHIC DESIGN</p>
+        <p class="course-name2">
+            STOCK MARKET</p>
+        <p class="course-name2">
+            CSS</p>
+        <p class="course-name2">
+            PHP</p>
+        <p class="course-name2">
+            C++</p>
+        <p class="course-name2">
+            PYTHON</p>
+    </div>
+    <footer class="footer-section">
+        <div class="company-details">
+            <div class="description">
+                <a href="{% url 'landing_page_after_login' %}">
+                    <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
+
+                </a>
+                <p>Description about the company</p>
+            </div>
+            <div class="app">
+                <p style="font-size: 1.1rem; font-weight: 600">Get this app on</p>
+                <div class="android">
+                    <img src="{% static 'assets/landing_page/playstore.png' %}" alt="Play store Logo" width="35px;"
+                        style="margin-right: 5px">
+                    <div>
+                        <p style="font-size: 0.8rem; font-weight: 500;">Android App On</p>
+                        <p style="font-size: 1.2rem;font-weight: 500; ">Google Play</p>
+                    </div>
+                </div>
+                <div class="apple">
+                    <img src="{% static 'assets/landing_page/appstore.png' %}" alt="Play store Logo" width="43px;"
+                        style="margin-right: 5px">
+                    <div>
+                        <p style="font-size: 0.6rem; font-weight: 600;">DOWNLOAD ON THE</p>
+                        <p style="font-size: 1.3rem;font-weight: 500; ">App Store</p>
+                    </div>
+                </div>
+            </div>
+            <div class="more-items">
+                <p style="font-size: 1.1rem; font-weight: 600; text-align: left; margin-left: 30px">More
+                </p>
+                <ul>
+                    <li>Press</li>
+                    <li>Investors</li>
+                    <li>Terms</li>
+                    <li>Privacy</li>
+                    <li>Help</li>
+                    <li>Accessibility</li>
+                    <li>Contact</li>
+                    <li>Article</li>
+                    <li>Directory</li>
+                    <li>Affiliates</li>
+                    <li>Manage Cookie Preferences</li>
+                </ul>
+            </div>
+            <div class="links">
+                <div class="socials">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    <i class="fa fa-google" aria-hidden="true"></i>
+                </div>
+                <div class="address">
+                    <div><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <p>Company Address</p>
+                    </div>
+                    <div><i class="fa fa-phone" aria-hidden="true"></i>
+                        <p>Phone Number</p>
+                    </div>
+                    <div><i class="fa fa-envelope" aria-hidden="true"></i>
+                        <p>Email Address</p>
+                    </div>
+                    <div><img src="{% static 'assets/landing_page/globe.png' %}" width="20px" alt="Hyperlink icon"
+                            style="align-self: flex-start;">
+                        <p>Website link</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="font-weight: 600">© 2024 NAME. Inc. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.categories');
+            const categoryList = document.querySelector('.main-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const categories = document.querySelector('.learnings');
+            const categoryList = document.querySelector('.learnings-category');
+            const categoryLists = document.querySelectorAll('.category');
+            categories.addEventListener('click', function () {
+                // Toggle the visibility of the list
+                categoryList.style.display = categoryList.style.display === 'none' ? 'block' : 'none';
+                categoryLists.forEach(function (category) {
+                    category.style.display = 'none';
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainCategories = document.querySelectorAll('.main-category li');
+            const categoryLists = document.querySelectorAll('.category');
+
+            mainCategories.forEach(function (mainCategory, index) {
+                mainCategory.addEventListener('click', function () {
+                    // Hide all category lists
+                    const categoryList = categoryLists[index];
+                    categoryList.style.display = (categoryList.style.display === 'none') ? 'block' : 'none';
+
+                    // Hide all other category lists
+                    categoryLists.forEach(function (category, idx) {
+                        if (idx !== index) {
+                            category.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+
+        document.getElementById('toggleProfile').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.profile-container');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.getElementById('toggleMenu').addEventListener('click', function () {
+            const profileContainer = document.querySelector('.menu-categories');
+            profileContainer.classList.toggle('inactive');
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all like buttons
+            const likeButtons = document.querySelectorAll(".like");
+
+            // Loop through each like button
+            likeButtons.forEach(function (likeButton) {
+                // Select active and inactive heart icons within the current like button
+                const activeHeart = likeButton.querySelector(".fa-heart");
+                const inactiveHeart = likeButton.querySelector(".fa-heart-o");
+
+                // Add click event listener to the current like button
+                likeButton.addEventListener("click", function () {
+                    // Toggle the "inactive" class for both heart icons within the current like button
+                    activeHeart.classList.toggle("inactive");
+                    inactiveHeart.classList.toggle("inactive");
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get all card title elements
+            const cardTitles = document.querySelectorAll(".card-body");
+
+            // Add click event listener to each card title
+            cardTitles.forEach(function (cardTitle) {
+                cardTitle.addEventListener("click", function () {
+                    // Find the corresponding course details modal within the same container
+                    const courseDetails = this.closest(".card-container").querySelector(".course-details");
+
+                    // Toggle visibility of the course details modal
+                    courseDetails.classList.toggle("show");
+                });
+            });
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Select all sliders on the page
+            const sliders = document.querySelectorAll(".wrapper");
+
+            sliders.forEach(function (slider) {
+                const carousel = slider.querySelector(".carousel");
+                const firstCardWidth = carousel.querySelector(".card").offsetWidth;
+                const leftButton = slider.querySelector("#left");
+                const rightButton = slider.querySelector("#right");
+
+                leftButton.addEventListener("click", () => {
+                    carousel.scrollLeft -= firstCardWidth;
+                });
+
+                rightButton.addEventListener("click", () => {
+                    carousel.scrollLeft += firstCardWidth;
+                });
+            });
+        });
+
+
+
+        function toggleAccordion(accordion) {
+            accordion.classList.toggle('active');
+            var answer = accordion.nextElementSibling;
+            answer.classList.toggle('show');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the modal container
+            var modal = document.getElementById("modal-container");
+
+            // Get all buttons with the ID open-modal-btn
+            var buttons = document.querySelectorAll('#open-modal-btn');
+
+            // Attach click event listeners to all buttons
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Open the modal by setting its display style to block
+                    modal.style.display = "flex";
+                });
+            });
+
+            // Get the close button inside the modal
+            var closeButton = document.querySelector('.modal-container .close');
+
+            // Attach click event listener to the close button
+            closeButton.addEventListener('click', function () {
+                // Close the modal by setting its display style to none
+                modal.style.display = "none";
+            });
+
+            // Attach click event listener to close modal when clicking outside of it
+            window.addEventListener('click', function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
