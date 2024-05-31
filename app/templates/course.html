@@ -250,7 +250,8 @@
             </div>
         </div>
         <div class="right-section">
-            <i class="fa fa-cart-plus" aria-hidden="true"></i>
+            <a href="{% url 'my_course' %}"><i class="fa fa-cart-plus" aria-hidden="true"></i></a>
+
             <a href="{% url 'login_page' %}"><button class="btn login">LOGIN</button></a>
             <a href="{% url 'student_signup_page' %}"><button class="btn signup">SIGNUP</button></a>
         </div>
@@ -868,7 +869,10 @@
                     <img class="logo" src="{% static 'assets/logo.png' %}" alt="">
 
                 </a>
-                <p>Description about the company</p>
+                <p style=" font-size: 0.9rem; text-align: justify;">Knowledge brings new beginnings.
+                    Knowlegopedia is an e-learning platform. It provides a wide range of technical knowledge through
+                    courses. It will lead you to modernization, technology, and innovation. It will also give you the
+                    knowledge to adapt to and transform society’s coming changes.</p>
             </div>
             <div class="app">
                 <p style="font-size: 1.1rem; font-weight: 600">Get this app on</p>
@@ -917,7 +921,7 @@
                 </div>
                 <div class="address">
                     <div><i class="fa fa-map-marker" aria-hidden="true"></i>
-                        <p>Company Address</p>
+                        <p style="width: 200px">Devki Vihar, Bithoria no.1, Haldwani, Uttarakhand, India</p>
                     </div>
                     <div><i class="fa fa-phone" aria-hidden="true"></i>
                         <p>Phone Number</p>

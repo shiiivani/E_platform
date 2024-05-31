@@ -652,7 +652,8 @@ color: #fff;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 15px;
+    margin: 10px;
+    width: 250px 
 }
 
 .company-details .description .logo {

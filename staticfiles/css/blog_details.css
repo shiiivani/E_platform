@@ -165,6 +165,7 @@ border-radius: 0;
     position: absolute;
     top: 70px;
     right: 10px;
+    z-index: 999;
 }
 
 .profile-container .profile-btn {
