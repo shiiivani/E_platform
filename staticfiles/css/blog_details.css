@@ -522,11 +522,15 @@ margin-bottom: 10px;
 .articles-container .card-container .card .img-container {
    position: relative;
  margin-bottom: 5px;
+ width: 100%;
+ height: 170px;
+ 
 }
 
 .card-container .card .img-container img {
     width: 100%;
-    height: 170px;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
 }
 
@@ -686,7 +690,20 @@ font-weight: 300;
     margin: 5px;
 }
 
+@media screen and (max-width: 1300px) {
+    .articles-container .articles .content {
+        width: 85%;
+    }
+}
 
+@media screen and (max-width: 1085px) {
+    .blog-content .left-section {
+        width: 100%;
+    }
+    .blog-content .blog-right-section {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 790px) {
     .navbar .left-section .searchBar input {
