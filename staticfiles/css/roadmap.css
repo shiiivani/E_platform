@@ -303,6 +303,16 @@ border-radius: 0;
     margin-left: 15px
 }
 
+.circle {
+    width: 750px;
+    height: 750px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    position: absolute;
+    left: -100px;
+    bottom: -250px;
+}
+
 
 @media screen and (max-width: 860px) {
       .bg-img {

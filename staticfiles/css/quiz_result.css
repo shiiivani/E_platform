@@ -277,6 +277,12 @@ padding: 15px 30px;
 font-weight: 600
 }
 
+.header-container div:last-child button:hover {
+    background-color: #625858;
+            cursor: pointer;
+            color: #fff;
+}
+
 .questions-container {
     width: 70%;
     margin-right: auto;

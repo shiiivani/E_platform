@@ -5,7 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Knowlegopedia</title>
+    <link rel="icon" href="{% static 'assets/logo.png' %}" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="{% static 'css/course_material.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -487,11 +488,25 @@
             </div>
         </div>
         <div class="grade-container containers">
+
             <h6 class="weeks week-heading"><span><i class="fa fa-angle-right" aria-hidden="true"
                         style="font-size: 1.5rem; margin-right: 6px;"></i></span>Week
                 1</h6>
             <div class="borderline">
                 <h5>Grades</h5>
+                <div class="header-container flex">
+                    <div class="flex">
+                        <img src="{% static 'assets/course-material/checkmark.png' %}" alt="" width="25px"
+                            style="margin-right: 15px">
+                        <p>You have completed all of the assessments that are
+                            currently due.</p>
+                    </div>
+                    <div class="flex">
+                        <p class="red-circle">2</p>
+                        <p>You didn't pass 2 of the required assessments
+                            you attempted.</p>
+                    </div>
+                </div>
                 <table>
                     <thead>
                         <tr>
@@ -505,128 +520,97 @@
                     <tbody>
                         <tr>
                             <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <img src="{% static 'assets/course-material/checkmark.png' %}" alt="" width="25px"
+                                    style="margin-right: 15px">
                                 <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                    <p>Introduction to Strategic Analysis</p>
+                                    <p>Quiz</p>
                                 </div>
                             </td>
-                            <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p style="font-size: 0.9rem">Locked</p>
+                            <td class=" small-row">
+                                <p>Passed</p>
                             </td>
                             <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                                <p>May 2</p>
+                                <p>12:00PM IST</p>
                             </td>
                             <td class="small-row">15%</td>
-                            <td class="small-row">80.5%</td>
+                            <td class="small-row">83.33%</td>
                         </tr>
                         <tr>
                             <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <img src="{% static 'assets/course-material/warning.png' %}" alt="" width="25px"
+                                    style="margin-right: 15px">
                                 <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                    <p>Analyzing Industry Structure</p>
+                                    <p>Quiz</p>
                                 </div>
                             </td>
                             <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p>Locked</p>
+                                <p>Didn't Pass</p>
                             </td>
                             <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                                <p>May 2</p>
+                                <p>12:00PM IST</p>
                             </td>
                             <td class="small-row">15%</td>
-                            <td class="small-row">83.55%</td>
+                            <td class="small-row">50%</td>
                         </tr>
                         <tr>
                             <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
+                                <img src="{% static 'assets/course-material/warning.png' %}" alt="" width="25px"
+                                    style="margin-right: 15px">
                                 <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
+                                    <p>Analyzing Firm Capabilities</p>
+                                    <p>Quiz</p>
+                                </div>
+                            </td>
+                            <td class=" small-row">
+                                <p>Didn't Pass</p>
+                            </td>
+                            <td class="date">
+                                <p>May 2</p>
+                                <p>12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row">66.66%</td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-file-text-o" aria-hidden="true"
+                                    style="font-size: 1.1rem; opacity: 0.6; margin-right: 15px"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p>Determining Competitive Position</p>
+                                    <p>Quiz</p>
+                                </div>
+                            </td>
+                            <td class=" small-row">
+                                <p>-</p>
+                            </td>
+                            <td class="date">
+                                <p>May 2</p>
+                                <p>12:00PM IST</p>
+                            </td>
+                            <td class="small-row">15%</td>
+                            <td class="small-row">-</td>
+                        </tr>
+                        <tr>
+                            <td class="flex big-row" style="margin-top: 20px;">
+                                <i class="fa fa-file-o" aria-hidden="true"
+                                    style="font-size: 1.1rem; opacity: 0.6; margin-right: 15px"></i>
+                                <div class="video-info" style="margin-left: 10px">
+                                    <p>Competitive Position Assignment</p>
+                                    <p>Submit your assignment and review 3 peers' assignments to get your grade.</p>
                                 </div>
                             </td>
                             <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p>Locked</p>
+                                <!-- <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
+                                <p>Locked</p> -->
                             </td>
                             <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
+                                <!-- <p style="font-size: 0.9rem">May 2</p>
+                                <p style="font-size: 0.9rem">12:00PM IST</p> -->
                             </td>
-                            <td class="small-row">15%</td>
-                            <td class="small-row"></td>
-                        </tr>
-                        <tr>
-                            <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
-                                <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
-                                </div>
-                            </td>
-                            <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p>Locked</p>
-                            </td>
-                            <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
-                            </td>
-                            <td class="small-row">15%</td>
-                            <td class="small-row"></td>
-                        </tr>
-                        <tr>
-                            <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
-                                <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
-                                </div>
-                            </td>
-                            <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p>Locked</p>
-                            </td>
-                            <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
-                            </td>
-                            <td class="small-row">15%</td>
-                            <td class="small-row"></td>
-                        </tr>
-                        <tr>
-                            <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
-                                <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
-                                </div>
-                            </td>
-                            <td class="flex small-row">
-                                <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                                <p>Locked</p>
-                            </td>
-                            <td class="date">
-                                <p style="font-size: 0.9rem">May 2</p>
-                                <p style="font-size: 0.9rem">12:00PM IST</p>
-                            </td>
-                            <td class="small-row">15%</td>
-                            <td class="small-row"></td>
-                        </tr>
-                        <tr>
-                            <td class="flex big-row" style="margin-top: 20px;">
-                                <i class="fa fa-play-circle-o" aria-hidden="true" style="font-size: 2.5rem;"></i>
-                                <div class="video-info" style="margin-left: 10px">
-                                    <p style="font-weight: 400;"> Name of the video</p>
-                                    <p style="font-weight: 300; font-size: 0.9rem">Video. 3min</p>
-                                </div>
-                            </td>
-                            <td class="small-row"></td>
-                            <td class="date"></td>
                             <td class="small-row">40%</td>
                             <td class="small-row"></td>
                         </tr>
@@ -635,30 +619,30 @@
                 <div class="below-containers">
                     <div class="assignment">
                         <div class="flex">
-                            <i class="fa fa-lock" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <i class="fa fa-file-o" aria-hidden="true"
+                                style="font-size: 1.1rem; opacity: 0.6; margin-right: 15px"></i>
                             <p>Submit Your Assessment</p>
                         </div>
                         <div class="flex" style="width:20%">
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                            <p style="font-size: 0.9rem">Locked</p>
+                            <p>-</p>
                         </div>
                         <div class="date">
-                            <p style="font-size: 0.9rem">May 2</p>
-                            <p style="font-size: 0.9rem">12:00PM IST</p>
+                            <p style="font-size: 0.9rem;font-weight: 600">May 2</p>
+                            <p style="font-size: 0.9rem;font-weight: 600">12:00PM IST</p>
                         </div>
                     </div>
                     <div class="assignment">
                         <div class="flex">
-                            <i class="fa fa-file-text" aria-hidden="true" style="margin-right: 10px;"></i>
+                            <i class="fa fa-commenting-o" aria-hidden="true"
+                                style="font-size: 1.1rem; opacity: 0.6; margin-right: 15px"></i>
                             <p>Review 3 peers assignments</p>
                         </div>
                         <div class="flex" style="width:20%">
-                            <i class="fa fa-exclamation-circle" aria-hidden="true" style="margin-right: 10px;"></i>
-                            <p style="font-size: 0.9rem">Locked</p>
+                            <p>-</p>
                         </div>
                         <div class="date">
-                            <p style="font-size: 0.9rem">May 2</p>
-                            <p style="font-size: 0.9rem">12:00PM IST</p>
+                            <p style="font-size: 0.9rem;font-weight: 600">May 2</p>
+                            <p style="font-size: 0.9rem;font-weight: 600">12:00PM IST</p>
                         </div>
                     </div>
                 </div>
@@ -1410,7 +1394,7 @@
                     </div>
                     <div class="buttons-container">
                         <button class="ticket-btn">Raise Ticket</button>
-                        <button class="pay-btn">Proceed to pay</button>
+                        <a href="{% url 'payment' %}" class="pay-btn">Proceed to pay</a>
                     </div>
                 </form>
 

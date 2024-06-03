@@ -299,6 +299,13 @@ font-size: 1.1rem;
 
 .grade-container table thead tr{
     border-bottom: 1px solid #000;
+    font-size: 1.2rem;
+        padding-bottom: 10px;
+}
+
+.grade-container table tbody td {
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 
@@ -322,12 +329,13 @@ font-size: 1.1rem;
         text-align: left;
         display: flex;
     align-items: center;
-    width: 20%;
+    width: 15%;
     }
 
     .grade-container table .big-row {
-        width: 300px;
+        width: 350px;
         text-align: left;
+        
     }
 
     .borderline .below-containers {
@@ -344,6 +352,41 @@ font-size: 1.1rem;
 
     .assignment div:first-child {
         width: 40%
+    }
+
+    .grade-container .video-info p:first-child,
+    .below-containers .assignment div:first-child p {
+        color: #59709A;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .grade-container .video-info p:last-child {
+        font-weight: 600;
+        opacity: 0.6;
+        font-size: 0.9rem
+    }
+
+    .grade-container .borderline .header-container {
+        background-color: #F7F8FB;
+        border-radius: 10px;
+        padding: 2%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+    }
+
+    .grade-container .borderline .header-container p:last-child{
+        width: 80%;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    .grade-container .borderline .header-container .red-circle {
+        background-color: #D20004;
+        border-radius: 50%;
+        padding: 2px 8px;
+        margin-right: 15px;
+        color: #fff;
+        font-weight: 500;
     }
 
     @media screen and (max-width: 1100px) {
@@ -412,8 +455,12 @@ font-size: 1.1rem;
     }
 
     .discussion-container table tbody tr td{
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         border: none !important;
+    }
+    .discussion-container table tbody tr:hover{
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        cursor: pointer;
     }
 
     .week-basis-discussion-container {
@@ -491,6 +538,11 @@ width: 300px
     .week-basis-discussion-container table thead,
     .week-basis-discussion-container table tbody tr {
         border-bottom: 1px solid #000;
+    }
+
+    .week-basis-discussion-container table tbody tr:hover {
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+cursor: pointer;
     }
    
     .week-basis-discussion-container table td{
@@ -957,6 +1009,11 @@ input:focus {
     border-radius: 30px;
     padding: 10px 30px;
     border: none;
+}
+
+.buttons-container .pay-btn:hover,
+.buttons-container .ticket-btn:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .mentorship-container .note {
